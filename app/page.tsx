@@ -7,6 +7,7 @@ import Steps from "./components/steps/Steps";
 import WhyUs from "./components/whyUs/WhyUs";
 import AreaCoverage from "./components/areaCoverage/AreaCoverage";
 import CtaHome from "./components/ctaHome/CtaHome";
+import Testimoni from "./components/testimoni/Testimoni";
 
 const siteName = "Biro Jasa Sahabat";
 
@@ -105,6 +106,7 @@ export default function HomePage() {
       <TrustBadges />
       <ServicesGrid />
       <Steps />
+      <Testimoni />
       <WhyUs />
       <AreaCoverage />
       <CtaHome />
