@@ -1,6 +1,7 @@
 // app/page.tsx
 import type { Metadata } from "next";
 import HeroMain from "./components/heroMain/HeroMain";
+import TrustBadges from "./components/trustBadges/TrustBadges";
 
 const siteName = "Biro Jasa Sahabat";
 
@@ -96,6 +97,7 @@ export default function HomePage() {
       />
 
       <HeroMain />
+      <TrustBadges />
     </main>
   );
 }
