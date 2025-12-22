@@ -5,6 +5,7 @@ import TrustBadges from "./components/trustBadges/TrustBadges";
 import ServicesGrid from "./components/servicesGrid/ServicesGrid";
 import Steps from "./components/steps/Steps";
 import WhyUs from "./components/whyUs/WhyUs";
+import AreaCoverage from "./components/areaCoverage/AreaCoverage";
 
 const siteName = "Biro Jasa Sahabat";
 
@@ -104,6 +105,7 @@ export default function HomePage() {
       <ServicesGrid />
       <Steps />
       <WhyUs />
+      <AreaCoverage />
     </main>
   );
 }
