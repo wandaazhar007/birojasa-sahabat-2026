@@ -2,6 +2,8 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import HeroContact from "../components/heroContact/HeroContact";
+import BusinessHours from "../components/businessHours/BusinessHours";
+import CtaContact from "../components/ctaContact/CtaContact";
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
@@ -117,8 +119,9 @@ export default function KontakPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* NOTE: halaman ini nanti akan kamu isi dengan section-section components */}
       <HeroContact />
+      <BusinessHours />
+      <CtaContact />
     </>
   );
 }
