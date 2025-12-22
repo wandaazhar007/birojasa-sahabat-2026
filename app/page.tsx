@@ -1,5 +1,6 @@
 // app/page.tsx
 import type { Metadata } from "next";
+import HeroMain from "./components/heroMain/HeroMain";
 
 const siteName = "Biro Jasa Sahabat";
 
@@ -94,17 +95,7 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homeJsonLd) }}
       />
 
-      {/* Section-section Home akan kita isi di step selanjutnya */}
-      {/* (sementara: minimal H1 untuk intent SEO) */}
-      <section className="section">
-        <div className="container">
-          <h1>
-            Biro Jasa STNK Terpercaya — Jemput Berkas, Proses Jelas, Dokumen
-            Diantar
-          </h1>
-          <p className="muted">{description}</p>
-        </div>
-      </section>
+      <HeroMain />
     </main>
   );
 }
