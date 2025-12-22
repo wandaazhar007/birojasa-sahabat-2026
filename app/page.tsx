@@ -4,6 +4,7 @@ import HeroMain from "./components/heroMain/HeroMain";
 import TrustBadges from "./components/trustBadges/TrustBadges";
 import ServicesGrid from "./components/servicesGrid/ServicesGrid";
 import Steps from "./components/steps/Steps";
+import WhyUs from "./components/whyUs/WhyUs";
 
 const siteName = "Biro Jasa Sahabat";
 
@@ -102,6 +103,7 @@ export default function HomePage() {
       <TrustBadges />
       <ServicesGrid />
       <Steps />
+      <WhyUs />
     </main>
   );
 }
