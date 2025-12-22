@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import HeroMain from "./components/heroMain/HeroMain";
 import TrustBadges from "./components/trustBadges/TrustBadges";
+import ServicesGrid from "./components/servicesGrid/ServicesGrid";
 
 const siteName = "Biro Jasa Sahabat";
 
@@ -98,6 +99,7 @@ export default function HomePage() {
 
       <HeroMain />
       <TrustBadges />
+      <ServicesGrid />
     </main>
   );
 }
