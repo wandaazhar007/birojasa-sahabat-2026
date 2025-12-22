@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "./styles/_globals.scss";
 
 import Navbar from "./components/navbar/Navbar";
+import Footer from "./components/footer/Footer";
 
 const siteName = "Biro Jasa Sahabat";
 
@@ -130,6 +131,7 @@ export default function RootLayout({
         <Navbar />
 
         {children}
+        <Footer />
       </body>
     </html>
   );
