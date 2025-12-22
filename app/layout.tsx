@@ -2,7 +2,7 @@
 import type { Metadata } from "next";
 import "./styles/_globals.scss";
 
-import Navbar from "./components/navbar/Navbar"; // (akan kita buat di step selanjutnya)
+import Navbar from "./components/navbar/Navbar";
 
 const siteName = "Biro Jasa Sahabat";
 
