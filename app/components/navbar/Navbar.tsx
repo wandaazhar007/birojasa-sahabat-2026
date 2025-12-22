@@ -42,20 +42,15 @@ export default function Navbar() {
     []
   );
 
-  const whatsappMessage =
-    "Assalamualaikum admin, saya mau tanya perihal surat-surat kendaraan";
-  const whatsappHref = `https://wa.me/6281318927898?text=${encodeURIComponent(
-    whatsappMessage
-  )}`;
+  const whatsappMessage = "Assalamualaikum admin, saya mau tanya perihal surat-surat kendaraan";
+  const whatsappHref = `https://wa.me/6281318927898?text=${encodeURIComponent(whatsappMessage)}`;
 
-  // close mobile panel on route change
   useEffect(() => {
     setMobileOpen(false);
     setMobileLayananOpen(false);
     setDesktopLayananOpen(false);
   }, [pathname]);
 
-  // close dropdown on outside click / escape
   useEffect(() => {
     function onDocClick(e: MouseEvent) {
       if (!desktopLayananOpen) return;
@@ -81,7 +76,6 @@ export default function Navbar() {
     };
   }, [desktopLayananOpen]);
 
-  // prevent background scroll when mobile menu open
   useEffect(() => {
     if (!mobileOpen) return;
     const prev = document.body.style.overflow;
@@ -99,7 +93,6 @@ export default function Navbar() {
   return (
     <header className={styles.header}>
       <div className={styles.inner}>
-        {/* Brand */}
         <Link href="/" className={styles.brand} aria-label="Birojasa Sahabat - Home">
           <span className={styles.logoWrap} aria-hidden="true">
             <Image
@@ -118,10 +111,7 @@ export default function Navbar() {
         <nav className={styles.nav} aria-label="Navigasi utama">
           <ul className={styles.menu}>
             <li className={styles.item}>
-              <Link
-                href="/"
-                className={`${styles.link} ${isActive("/") ? styles.active : ""}`}
-              >
+              <Link href="/" className={`${styles.link} ${isActive("/") ? styles.active : ""}`}>
                 Home
               </Link>
             </li>
@@ -129,9 +119,7 @@ export default function Navbar() {
             <li className={`${styles.item} ${styles.dropdown}`} ref={dropdownRef}>
               <button
                 type="button"
-                className={`${styles.link} ${styles.dropdownBtn} ${
-                  isActive("/layanan") ? styles.active : ""
-                }`}
+                className={`${styles.link} ${styles.dropdownBtn} ${isActive("/layanan") ? styles.active : ""}`}
                 aria-haspopup="menu"
                 aria-expanded={desktopLayananOpen}
                 aria-controls="nav-layanan-menu"
@@ -140,35 +128,23 @@ export default function Navbar() {
                 Layanan
                 <FontAwesomeIcon
                   icon={faChevronDown}
-                  className={`${styles.chev} ${
-                    desktopLayananOpen ? styles.chevOpen : ""
-                  }`}
-                  aria-hidden="true"
+                  className={`${styles.chev} ${desktopLayananOpen ? styles.chevOpen : ""}`}
                 />
               </button>
 
               <div
                 id="nav-layanan-menu"
-                className={`${styles.dropdownPanel} ${
-                  desktopLayananOpen ? styles.dropdownOpen : ""
-                }`}
+                className={`${styles.dropdownPanel} ${desktopLayananOpen ? styles.dropdownOpen : ""}`}
                 role="menu"
-                aria-label="Menu layanan"
               >
                 <Link href="/layanan" className={styles.dropdownTopLink} role="menuitem">
                   Lihat semua layanan
                 </Link>
-
                 <div className={styles.dropdownDivider} aria-hidden="true" />
-
                 <ul className={styles.dropdownList}>
                   {layananItems.map((it) => (
                     <li key={it.href}>
-                      <Link
-                        href={it.href}
-                        className={styles.dropdownLink}
-                        role="menuitem"
-                      >
+                      <Link href={it.href} className={styles.dropdownLink} role="menuitem">
                         {it.label}
                       </Link>
                     </li>
@@ -178,19 +154,13 @@ export default function Navbar() {
             </li>
 
             <li className={styles.item}>
-              <Link
-                href="/tentang"
-                className={`${styles.link} ${isActive("/tentang") ? styles.active : ""}`}
-              >
+              <Link href="/tentang" className={`${styles.link} ${isActive("/tentang") ? styles.active : ""}`}>
                 Tentang Kami
               </Link>
             </li>
 
             <li className={styles.item}>
-              <Link
-                href="/kontak"
-                className={`${styles.link} ${isActive("/kontak") ? styles.active : ""}`}
-              >
+              <Link href="/kontak" className={`${styles.link} ${isActive("/kontak") ? styles.active : ""}`}>
                 Kontak
               </Link>
             </li>
@@ -199,13 +169,7 @@ export default function Navbar() {
 
         {/* Right actions */}
         <div className={styles.actions}>
-          <a
-            href={whatsappHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`${styles.cta} btn btnPrimary`}
-            aria-label="Tanya Sekarang via WhatsApp"
-          >
+          <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className={`${styles.cta} btn btnPrimary`}>
             <FontAwesomeIcon icon={faWhatsapp} aria-hidden="true" />
             Tanya Sekarang
           </a>
@@ -214,20 +178,17 @@ export default function Navbar() {
             type="button"
             className={styles.mobileToggle}
             onClick={() => setMobileOpen((v) => !v)}
-            aria-label={mobileOpen ? "Tutup menu" : "Buka menu"}
             aria-expanded={mobileOpen}
-            aria-controls="mobile-nav"
           >
             <FontAwesomeIcon icon={mobileOpen ? faXmark : faBars} />
           </button>
         </div>
       </div>
 
-      {/* Mobile overlay + panel */}
+      {/* Mobile panel */}
       <div
         className={`${styles.overlay} ${mobileOpen ? styles.overlayOpen : ""}`}
         onClick={() => setMobileOpen(false)}
-        aria-hidden={!mobileOpen}
       />
 
       <div
@@ -235,56 +196,38 @@ export default function Navbar() {
         className={`${styles.mobilePanel} ${mobileOpen ? styles.mobileOpen : ""}`}
         role="dialog"
         aria-modal="true"
-        aria-label="Menu navigasi mobile"
       >
         <div className={styles.mobileHeader}>
           <span className={styles.mobileTitle}>Menu</span>
-          <button
-            type="button"
-            className={styles.mobileClose}
-            onClick={() => setMobileOpen(false)}
-            aria-label="Tutup menu"
-          >
+          <button type="button" className={styles.mobileClose} onClick={() => setMobileOpen(false)}>
             <FontAwesomeIcon icon={faXmark} />
           </button>
         </div>
 
+        {/* Scrollable Body */}
         <div className={styles.mobileBody}>
-          <Link
-            href="/"
-            className={`${styles.mobileLink} ${isActive("/") ? styles.mobileActive : ""}`}
-          >
+          <Link href="/" className={`${styles.mobileLink} ${isActive("/") ? styles.mobileActive : ""}`}>
             Home
           </Link>
 
           <button
             type="button"
-            className={`${styles.mobileLink} ${styles.mobileAccordionBtn} ${
-              isActive("/layanan") ? styles.mobileActive : ""
-            }`}
+            className={`${styles.mobileLink} ${styles.mobileAccordionBtn} ${isActive("/layanan") ? styles.mobileActive : ""}`}
             onClick={() => setMobileLayananOpen((v) => !v)}
             aria-expanded={mobileLayananOpen}
-            aria-controls="mobile-layanan"
           >
             <span>Layanan</span>
             <FontAwesomeIcon
               icon={faChevronDown}
-              className={`${styles.chev} ${
-                mobileLayananOpen ? styles.chevOpen : ""
-              }`}
-              aria-hidden="true"
+              className={`${styles.chev} ${mobileLayananOpen ? styles.chevOpen : ""}`}
             />
           </button>
 
           <div
             id="mobile-layanan"
-            className={`${styles.mobileSub} ${
-              mobileLayananOpen ? styles.mobileSubOpen : ""
-            }`}
+            className={`${styles.mobileSub} ${mobileLayananOpen ? styles.mobileSubOpen : ""}`}
           >
-            <Link href="/layanan" className={styles.mobileSubLink}>
-              Lihat semua layanan
-            </Link>
+            <Link href="/layanan" className={styles.mobileSubLink}>Lihat semua layanan</Link>
             {layananItems.map((it) => (
               <Link key={it.href} href={it.href} className={styles.mobileSubLink}>
                 {it.label}
@@ -292,32 +235,21 @@ export default function Navbar() {
             ))}
           </div>
 
-          <Link
-            href="/tentang"
-            className={`${styles.mobileLink} ${isActive("/tentang") ? styles.mobileActive : ""}`}
-          >
+          <Link href="/tentang" className={`${styles.mobileLink} ${isActive("/tentang") ? styles.mobileActive : ""}`}>
             Tentang Kami
           </Link>
 
-          <Link
-            href="/kontak"
-            className={`${styles.mobileLink} ${isActive("/kontak") ? styles.mobileActive : ""}`}
-          >
+          <Link href="/kontak" className={`${styles.mobileLink} ${isActive("/kontak") ? styles.mobileActive : ""}`}>
             Kontak
           </Link>
+        </div>
 
-          <div className={styles.mobileCtaWrap}>
-            <a
-              href={whatsappHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`${styles.mobileCta} btn btnPrimary`}
-              aria-label="Tanya Sekarang via WhatsApp"
-            >
-              <FontAwesomeIcon icon={faWhatsapp} aria-hidden="true" />
-              Tanya Sekarang
-            </a>
-          </div>
+        {/* Fixed Footer for Mobile */}
+        <div className={styles.mobileCtaWrap}>
+          <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className={`${styles.mobileCta} btn btnPrimary`}>
+            <FontAwesomeIcon icon={faWhatsapp} />
+            Tanya Sekarang
+          </a>
         </div>
       </div>
     </header>
