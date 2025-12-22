@@ -1,6 +1,8 @@
 // app/layanan/page.tsx
 import type { Metadata } from "next";
 import Script from "next/script";
+import HeroLayanan from "../components/heroLayanan/HeroLayanan";
+import Steps from "../components/steps/Steps";
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
@@ -144,16 +146,8 @@ export default function LayananPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* NOTE: halaman ini nanti akan kamu isi dengan section-section components */}
-      <main>
-        <header>
-          <h1>Layanan Pengurusan STNK & Berkas Kendaraan</h1>
-          <p>
-            Pilih layanan yang kamu butuhkan. Kami jelaskan persyaratan dan alur prosesnya dari awal agar
-            kamu tidak perlu antre dan bolak-balik.
-          </p>
-        </header>
-      </main>
+      <HeroLayanan />
+      <Steps />
     </>
   );
 }
