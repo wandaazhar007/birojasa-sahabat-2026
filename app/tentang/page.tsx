@@ -5,6 +5,7 @@ import Script from "next/script";
 import HeroAbout from "../components/heroAbout/HeroAbout";
 import BrandStory from "../components/brandStory/BrandStory";
 import VisiMisi from "../components/visiMisi/VisiMisi";
+import CaraKerja from "../components/caraKerja/CaraKerja";
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
@@ -100,6 +101,7 @@ export default function TentangPage() {
       <HeroAbout />
       <BrandStory />
       <VisiMisi />
+      <CaraKerja />
     </>
   );
 }
