@@ -1,6 +1,7 @@
 // app/kontak/page.tsx
 import type { Metadata } from "next";
 import Script from "next/script";
+import HeroContact from "../components/heroContact/HeroContact";
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
@@ -117,56 +118,7 @@ export default function KontakPage() {
       />
 
       {/* NOTE: halaman ini nanti akan kamu isi dengan section-section components */}
-      <main>
-        <header>
-          <h1>Kontak & Lokasi Biro Jasa Sahabat</h1>
-          <p>
-            Untuk konsultasi layanan pengurusan STNK & berkas kendaraan, silakan hubungi kami melalui
-            WhatsApp. Kamu juga bisa cek lokasi kantor kami di Ciputat melalui Google Maps.
-          </p>
-        </header>
-
-        <section aria-label="Info kontak">
-          <h2>Hubungi Kami</h2>
-          <ul>
-            <li>
-              WhatsApp:{" "}
-              <a href={waHref} target="_blank" rel="noopener noreferrer">
-                +62 813-1892-7898
-              </a>
-            </li>
-            <li>
-              Google Maps:{" "}
-              <a href={mapsHref} target="_blank" rel="noopener noreferrer">
-                Lihat lokasi
-              </a>
-            </li>
-            <li>Jam operasional: Silakan konfirmasi via WhatsApp (jam dapat berubah).</li>
-          </ul>
-        </section>
-
-        <section aria-label="Alamat">
-          <h2>Alamat</h2>
-          <address>
-            Jl. Suka Bakti 1 No.30, RT.4/RW.5, Serua Indah, Ciputat, South Tangerang City, Banten 15414,
-            Indonesia
-          </address>
-        </section>
-
-        <section aria-label="Peta lokasi">
-          <h2>Lokasi di Maps</h2>
-          <iframe
-            src={mapsEmbedSrc}
-            width="600"
-            height="450"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title="Peta lokasi Birojasa Sahabat"
-          />
-        </section>
-      </main>
+      <HeroContact />
     </>
   );
 }
