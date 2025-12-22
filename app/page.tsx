@@ -6,6 +6,7 @@ import ServicesGrid from "./components/servicesGrid/ServicesGrid";
 import Steps from "./components/steps/Steps";
 import WhyUs from "./components/whyUs/WhyUs";
 import AreaCoverage from "./components/areaCoverage/AreaCoverage";
+import CtaHome from "./components/ctaHome/CtaHome";
 
 const siteName = "Biro Jasa Sahabat";
 
@@ -106,6 +107,7 @@ export default function HomePage() {
       <Steps />
       <WhyUs />
       <AreaCoverage />
+      <CtaHome />
     </main>
   );
 }
