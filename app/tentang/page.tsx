@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 
 import HeroAbout from "../components/heroAbout/HeroAbout";
+import BrandStory from "../components/brandStory/BrandStory";
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
@@ -96,7 +97,7 @@ export default function TentangPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <HeroAbout />
-      {/* Next sections akan kamu isi di step berikutnya (Brand Story, Values, Cara Kerja, dll). */}
+      <BrandStory />
     </>
   );
 }
