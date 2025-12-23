@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 
 import HeroService from "@/app/components/heroService/HeroService";
+import BenefitsSummary from "@/app/components/benefitsSummary/BenefitsSummary";
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
@@ -58,10 +59,7 @@ export const metadata: Metadata = {
     description: pageDescription,
     images: [ogImage],
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  robots: { index: true, follow: true },
 };
 
 export default function PerpanjangStnkTahunanPage() {
@@ -187,8 +185,39 @@ export default function PerpanjangStnkTahunanPage() {
           ]}
         />
 
-        {/* NOTE: section lain akan ditambahkan di step berikutnya:
-            - Ringkasan manfaat
+        <BenefitsSummary
+          heading="Ringkasan manfaat perpanjang STNK tahunan"
+          subheading="Biar kamu nggak bingung dan nggak capek bolak-balik—ini yang kamu dapat saat proses bareng Birojasa Sahabat."
+          items={[
+            {
+              title: "Tidak perlu antre & bolak-balik",
+              description:
+                "Kamu tinggal konsultasi, kami arahkan persyaratan dari awal dan bantu jalankan prosesnya dengan rapi.",
+            },
+            {
+              title: "Persyaratan berkas jelas",
+              description:
+                "Untuk STNK tahunan, umumnya: STNK asli, KTP asli, dan surat kuasa (jika diwakilkan).",
+            },
+            {
+              title: "Biaya & langkah transparan",
+              description:
+                "Kami jelaskan alur dan komponen prosesnya sejak awal supaya tidak ada kejutan yang bikin ragu.",
+            },
+            {
+              title: "Berkas ditangani dengan aman",
+              description:
+                "Dokumen penting ditangani tertib. Komunikasi status juga jelas supaya kamu tenang.",
+            },
+            {
+              title: "Update progress responsif",
+              description:
+                "Kamu bisa tanya kapan saja via WhatsApp, dan kami bantu pantau progres secara informatif.",
+            },
+          ]}
+        />
+
+        {/* NEXT SECTIONS (step berikutnya):
             - Persyaratan dokumen (detail)
             - Alur proses
             - Estimasi
