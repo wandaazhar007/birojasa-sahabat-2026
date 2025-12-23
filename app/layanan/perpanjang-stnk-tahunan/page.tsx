@@ -1,6 +1,8 @@
-// app/perpanjang-stnk-tahunan/page.tsx
+// app/layanan/perpanjang-stnk-tahunan/page.tsx
 import type { Metadata } from "next";
 import Script from "next/script";
+
+import HeroService from "@/app/components/heroService/HeroService";
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
@@ -9,39 +11,31 @@ const siteUrl =
 const siteName = "Birojasa Sahabat";
 const ogImage = `${siteUrl}/images/og-birojasa-sahabat.jpg`;
 
-// NOTE:
-// Blueprint kamu mencantumkan path /layanan/perpanjang-stnk-tahunan/.
-// Kalau kamu memang ingin konsisten dengan blueprint, pindahkan folder ini ke:
-// app/layanan/perpanjang-stnk-tahunan/page.tsx
-const canonical = `${siteUrl}/perpanjang-stnk-tahunan`;
+const canonical = `${siteUrl}/layanan/perpanjang-stnk-tahunan`;
 
-const pageTitle = `Perpanjang STNK Tahunan | ${siteName}`;
+const pageTitle = `Jasa Perpanjang STNK Tahunan | ${siteName}`;
 const pageDescription =
-  "Cek syarat perpanjang STNK tahunan (STNK asli, KTP asli, surat kuasa) dan alur proses yang jelas. Birojasa Sahabat bantu tanpa antre & bolak-balik. Konsultasi gratis via WhatsApp +6281318927898.";
+  "Jasa perpanjang STNK tahunan dengan persyaratan jelas (STNK asli, KTP asli, surat kuasa) dan alur proses transparan. Birojasa Sahabat bantu kamu tanpa antre & bolak-balik. Konsultasi gratis via WhatsApp +6281318927898.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: pageTitle,
   description: pageDescription,
   keywords: [
-    // target keyword dari blueprint
-    "syarat perpanjang STNK tahunan",
-    "jasa perpanjang STNK",
-    // variasi intent
     "jasa perpanjang STNK tahunan",
-    "perpanjang STNK tahunan tanpa antre",
+    "perpanjang STNK tahunan",
+    "syarat perpanjang STNK tahunan",
+    "cara perpanjang STNK tahunan",
     "biro jasa STNK",
     "biro jasa perpanjang STNK",
-    // local SEO
-    "jasa perpanjang STNK Ciputat",
-    "jasa perpanjang STNK Tangerang Selatan",
+    "tanpa antre perpanjang STNK",
+    "urus STNK cepat",
     "biro jasa STNK Ciputat",
     "biro jasa STNK Tangerang Selatan",
     "jasa STNK Jabodetabek",
+    "konsultasi gratis WhatsApp",
   ],
-  alternates: {
-    canonical,
-  },
+  alternates: { canonical },
   openGraph: {
     type: "website",
     locale: "id_ID",
@@ -54,7 +48,7 @@ export const metadata: Metadata = {
         url: ogImage,
         width: 1200,
         height: 630,
-        alt: "Birojasa Sahabat — Perpanjang STNK Tahunan",
+        alt: "Birojasa Sahabat — Jasa Perpanjang STNK Tahunan",
       },
     ],
   },
@@ -73,7 +67,9 @@ export const metadata: Metadata = {
 export default function PerpanjangStnkTahunanPage() {
   const waMessage =
     "Assalamualaikum admin, saya mau tanya perihal perpanjang STNK tahunan.";
-  const waHref = `https://wa.me/6281318927898?text=${encodeURIComponent(waMessage)}`;
+  const waHref = `https://wa.me/6281318927898?text=${encodeURIComponent(
+    waMessage
+  )}`;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -119,23 +115,21 @@ export default function PerpanjangStnkTahunanPage() {
           "@type": "Audience",
           audienceType: "Pemilik kendaraan yang ingin perpanjang STNK tahunan",
         },
+        availableChannel: [
+          {
+            "@type": "ServiceChannel",
+            serviceUrl: waHref,
+            servicePhone: "+6281318927898",
+            availableLanguage: ["id"],
+          },
+        ],
       },
       {
         "@type": "BreadcrumbList",
         "@id": `${canonical}#breadcrumbs`,
         itemListElement: [
-          {
-            "@type": "ListItem",
-            position: 1,
-            name: "Home",
-            item: `${siteUrl}/`,
-          },
-          {
-            "@type": "ListItem",
-            position: 2,
-            name: "Layanan",
-            item: `${siteUrl}/layanan`,
-          },
+          { "@type": "ListItem", position: 1, name: "Home", item: `${siteUrl}/` },
+          { "@type": "ListItem", position: 2, name: "Layanan", item: `${siteUrl}/layanan` },
           {
             "@type": "ListItem",
             position: 3,
@@ -162,21 +156,45 @@ export default function PerpanjangStnkTahunanPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* NOTE: halaman ini nanti akan kamu isi dengan section-section components */}
       <main>
-        <header>
-          <h1>Jasa Perpanjang STNK Tahunan — Cepat &amp; Tanpa Ribet</h1>
-          <p>
-            Cek syarat dan alur perpanjang STNK tahunan dengan jelas. Kalau kamu ingin yang praktis,
-            tinggal chat—kami bantu arahkan berkas yang dibutuhkan dan langkah berikutnya.
-          </p>
+        <HeroService
+          title="Jasa Perpanjang STNK Tahunan"
+          subtitle="Tanpa antre & bolak-balik—kami bantu cek persyaratan berkas, jelaskan alur, dan dampingi prosesnya dengan komunikasi yang rapi."
+          description="Cocok untuk kamu yang ingin proses yang jelas dan aman. Mulai dari chat WhatsApp dulu—kami arahkan berkas yang dibutuhkan sesuai kondisi dokumen dan area."
+          badgeText="Layanan STNK"
+          primaryCtaLabel="Konsultasi Gratis"
+          primaryCtaMessage="Assalamualaikum admin, saya mau tanya perihal perpanjang STNK tahunan."
+          secondaryCtaLabel="Lihat layanan lain"
+          secondaryCtaHref="/layanan"
+          breadcrumbs={[
+            { label: "Home", href: "/" },
+            { label: "Layanan", href: "/layanan" },
+            { label: "Perpanjang STNK Tahunan", href: "/layanan/perpanjang-stnk-tahunan" },
+          ]}
+          highlights={[
+            {
+              title: "Persyaratan jelas",
+              description: "STNK asli, KTP asli, dan surat kuasa—kami bantu cek dari awal.",
+            },
+            {
+              title: "Transparan & rapi",
+              description: "Alur proses dijelaskan, status di-update, tidak bikin bingung.",
+            },
+            {
+              title: "Berkas aman",
+              description: "Penanganan dokumen tertib dan komunikasi responsif.",
+            },
+          ]}
+        />
 
-          <p>
-            <a href={waHref} target="_blank" rel="noopener noreferrer">
-              Konsultasi gratis via WhatsApp
-            </a>
-          </p>
-        </header>
+        {/* NOTE: section lain akan ditambahkan di step berikutnya:
+            - Ringkasan manfaat
+            - Persyaratan dokumen (detail)
+            - Alur proses
+            - Estimasi
+            - FAQ mini
+            - CTA closing
+        */}
       </main>
     </>
   );
