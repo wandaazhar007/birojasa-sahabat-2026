@@ -7,6 +7,8 @@ import BenefitsSummary from "@/app/components/benefitsSummary/BenefitsSummary";
 import PersyaratanDokumen from "@/app/components/persyaratanDokumen/PersyaratanDokumen";
 import AlurProses from "@/app/components/alurProses/AlurProses";
 import Estimasi from "@/app/components/estimasi/Estimasi";
+import FaqMini from "@/app/components/faqMini/FaqMini";
+
 import { faClock } from "@fortawesome/free-solid-svg-icons";
 
 const siteUrl =
@@ -49,17 +51,29 @@ export const metadata: Metadata = {
     title: pageTitle,
     description: pageDescription,
     images: [
-      { url: ogImage, width: 1200, height: 630, alt: "Birojasa Sahabat — Jasa Perpanjang STNK Tahunan" },
+      {
+        url: ogImage,
+        width: 1200,
+        height: 630,
+        alt: "Birojasa Sahabat — Jasa Perpanjang STNK Tahunan",
+      },
     ],
   },
-  twitter: { card: "summary_large_image", title: pageTitle, description: pageDescription, images: [ogImage] },
+  twitter: {
+    card: "summary_large_image",
+    title: pageTitle,
+    description: pageDescription,
+    images: [ogImage],
+  },
   robots: { index: true, follow: true },
 };
 
 export default function PerpanjangStnkTahunanPage() {
   const waMessage =
     "Assalamualaikum admin, saya mau tanya perihal perpanjang STNK tahunan.";
-  const waHref = `https://wa.me/6281318927898?text=${encodeURIComponent(waMessage)}`;
+  const waHref = `https://wa.me/6281318927898?text=${encodeURIComponent(
+    waMessage
+  )}`;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -103,7 +117,8 @@ export default function PerpanjangStnkTahunanPage() {
         areaServed: ["Ciputat", "Tangerang Selatan", "Jabodetabek"],
         audience: {
           "@type": "Audience",
-          audienceType: "Pemilik kendaraan yang ingin perpanjang STNK tahunan",
+          audienceType:
+            "Pemilik kendaraan yang ingin perpanjang STNK tahunan tanpa ribet",
         },
         availableChannel: [
           {
@@ -119,11 +134,27 @@ export default function PerpanjangStnkTahunanPage() {
         "@id": `${canonical}#breadcrumbs`,
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home", item: `${siteUrl}/` },
-          { "@type": "ListItem", position: 2, name: "Layanan", item: `${siteUrl}/layanan` },
-          { "@type": "ListItem", position: 3, name: "Perpanjang STNK Tahunan", item: canonical },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Layanan",
+            item: `${siteUrl}/layanan`,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: "Perpanjang STNK Tahunan",
+            item: canonical,
+          },
         ],
       },
-      { "@type": "WebSite", "@id": `${siteUrl}#website`, url: siteUrl, name: siteName, inLanguage: "id-ID" },
+      {
+        "@type": "WebSite",
+        "@id": `${siteUrl}#website`,
+        url: siteUrl,
+        name: siteName,
+        inLanguage: "id-ID",
+      },
     ],
   };
 
@@ -148,12 +179,25 @@ export default function PerpanjangStnkTahunanPage() {
           breadcrumbs={[
             { label: "Home", href: "/" },
             { label: "Layanan", href: "/layanan" },
-            { label: "Perpanjang STNK Tahunan", href: "/layanan/perpanjang-stnk-tahunan" },
+            {
+              label: "Perpanjang STNK Tahunan",
+              href: "/layanan/perpanjang-stnk-tahunan",
+            },
           ]}
           highlights={[
-            { title: "Persyaratan jelas", description: "STNK asli, KTP asli, dan surat kuasa—kami bantu cek dari awal." },
-            { title: "Transparan & rapi", description: "Alur proses dijelaskan, status di-update, tidak bikin bingung." },
-            { title: "Berkas aman", description: "Penanganan dokumen tertib dan komunikasi responsif." },
+            {
+              title: "Persyaratan jelas",
+              description:
+                "STNK asli, KTP asli, dan surat kuasa—kami bantu cek dari awal.",
+            },
+            {
+              title: "Transparan & rapi",
+              description: "Alur proses dijelaskan, status di-update, tidak bikin bingung.",
+            },
+            {
+              title: "Berkas aman",
+              description: "Penanganan dokumen tertib dan komunikasi responsif.",
+            },
           ]}
         />
 
@@ -161,11 +205,31 @@ export default function PerpanjangStnkTahunanPage() {
           heading="Ringkasan manfaat perpanjang STNK tahunan"
           subheading="Biar kamu nggak bingung dan nggak capek bolak-balik—ini yang kamu dapat saat proses bareng Birojasa Sahabat."
           items={[
-            { title: "Tidak perlu antre & bolak-balik", description: "Kamu tinggal konsultasi, kami arahkan persyaratan dari awal dan bantu jalankan prosesnya dengan rapi." },
-            { title: "Persyaratan berkas jelas", description: "Untuk STNK tahunan, umumnya: STNK asli, KTP asli, dan surat kuasa (jika diwakilkan)." },
-            { title: "Biaya & langkah transparan", description: "Kami jelaskan alur dan komponen prosesnya sejak awal supaya tidak ada kejutan yang bikin ragu." },
-            { title: "Berkas ditangani dengan aman", description: "Dokumen penting ditangani tertib. Komunikasi status juga jelas supaya kamu tenang." },
-            { title: "Update progress responsif", description: "Kamu bisa tanya kapan saja via WhatsApp, dan kami bantu pantau progres secara informatif." },
+            {
+              title: "Tidak perlu antre & bolak-balik",
+              description:
+                "Kamu tinggal konsultasi, kami arahkan persyaratan dari awal dan bantu jalankan prosesnya dengan rapi.",
+            },
+            {
+              title: "Persyaratan berkas jelas",
+              description:
+                "Untuk STNK tahunan, umumnya: STNK asli, KTP asli, dan surat kuasa (jika diwakilkan).",
+            },
+            {
+              title: "Biaya & langkah transparan",
+              description:
+                "Kami jelaskan alur dan komponen prosesnya sejak awal supaya tidak ada kejutan yang bikin ragu.",
+            },
+            {
+              title: "Berkas ditangani dengan aman",
+              description:
+                "Dokumen penting ditangani tertib. Komunikasi status juga jelas supaya kamu tenang.",
+            },
+            {
+              title: "Update progress responsif",
+              description:
+                "Kamu bisa tanya kapan saja via WhatsApp, dan kami bantu pantau progres secara informatif.",
+            },
           ]}
         />
 
@@ -239,10 +303,38 @@ export default function PerpanjangStnkTahunanPage() {
           ]}
         />
 
+        <FaqMini
+          kickerText="FAQ STNK Tahunan"
+          title="Pertanyaan umum sebelum perpanjang STNK tahunan"
+          subtitle="Jawaban ringkas biar kamu paham alurnya dari awal—tanpa bingung, tanpa bolak-balik."
+          waMessage="Assalamualaikum admin, saya mau tanya perihal perpanjang STNK tahunan."
+          faqs={[
+            {
+              q: "Apa saja syarat perpanjang STNK tahunan?",
+              a: "Umumnya: STNK asli, KTP asli, dan surat kuasa jika pengurusan diwakilkan. Jika ada kondisi khusus pada dokumen, kami informasikan setelah pengecekan.",
+            },
+            {
+              q: "Apakah perpanjang STNK tahunan perlu cek fisik?",
+              a: "Biasanya tidak. Namun bisa ada kebutuhan tertentu tergantung kasus/area. Chat dulu agar kami cekkan kondisi berkas dan kebutuhannya.",
+            },
+            {
+              q: "Kalau saya sibuk, bisa diwakilkan?",
+              a: "Bisa. Kamu siapkan surat kuasa dan dokumen pendukung yang diperlukan. Kami bantu arahkan langkahnya lewat WhatsApp.",
+            },
+            {
+              q: "Estimasi prosesnya berapa lama?",
+              a: "Tergantung kelengkapan berkas dan area pengurusan. Kami berikan estimasi setelah cek berkas supaya kamu dapat gambaran yang realistis.",
+            },
+            {
+              q: "Kalau berkas saya kurang lengkap gimana?",
+              a: "Kami cek dulu. Kalau ada yang kurang, kami jelaskan apa yang perlu dilengkapi dan opsi terbaiknya supaya proses tidak mentok.",
+            },
+          ]}
+        />
+
         {/* NEXT:
-            - Estimasi
-            - FAQ mini
-            - CTA closing
+            - CTA closing (service)
+            - (opsional) internal links ke layanan lain
         */}
       </main>
     </>

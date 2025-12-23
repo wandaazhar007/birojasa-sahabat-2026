@@ -17,16 +17,49 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 
-type FaqItem = {
+export type FaqItem = {
   q: string;
   a: string;
 };
 
-const waMessage = "Assalamualaikum admin Birojasa Sahabat";
-const waHref = `https://wa.me/6281318927898?text=${encodeURIComponent(waMessage)}`;
+export type FaqPoint = {
+  icon: any;
+  text: string;
+};
 
-export default function FaqMini() {
-  const faqs: FaqItem[] = useMemo(
+type FaqMiniProps = {
+  // copy left column
+  kickerText?: string;
+  title?: string;
+  subtitle?: string;
+
+  // content
+  faqs?: FaqItem[];
+  points?: FaqPoint[];
+
+  // links
+  waMessage?: string;
+  waNumber?: string; // default: "6281318927898"
+  faqHref?: string; // default: "/faq"
+  primaryCtaLabel?: string;
+  secondaryCtaLabel?: string;
+};
+
+export default function FaqMini({
+  kickerText = "FAQ Singkat",
+  title = "Pertanyaan yang paling sering ditanya",
+  subtitle = "Biar kamu makin yakin sebelum chat, ini jawaban ringkas untuk pertanyaan yang paling sering muncul. Kalau pertanyaanmu berbeda, tinggal WhatsApp—kami jawab dengan jelas.",
+
+  faqs,
+  points,
+
+  waMessage = "Assalamualaikum admin Birojasa Sahabat",
+  waNumber = "6281318927898",
+  faqHref = "/faq",
+  primaryCtaLabel = "Tanya via WhatsApp",
+  secondaryCtaLabel = "Lihat FAQ lengkap",
+}: FaqMiniProps) {
+  const defaultFaqs: FaqItem[] = useMemo(
     () => [
       {
         q: "Apa saja berkas yang biasanya dibutuhkan?",
@@ -56,6 +89,21 @@ export default function FaqMini() {
     []
   );
 
+  const defaultPoints: FaqPoint[] = useMemo(
+    () => [
+      { icon: faListCheck, text: "Proses rapi & mudah dipahami" },
+      { icon: faClock, text: "Hemat waktu, tidak perlu antre" },
+      { icon: faShieldHalved, text: "Berkas ditangani aman & bertanggung jawab" },
+      { icon: faComments, text: "Komunikasi jelas + update status" },
+    ],
+    []
+  );
+
+  const finalFaqs = faqs && faqs.length ? faqs : defaultFaqs;
+  const finalPoints = points && points.length ? points : defaultPoints;
+
+  const waHref = `https://wa.me/${waNumber}?text=${encodeURIComponent(waMessage)}`;
+
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const toggle = (idx: number) => {
@@ -72,40 +120,21 @@ export default function FaqMini() {
               <span className={styles.kickerIcon} aria-hidden="true">
                 <FontAwesomeIcon icon={faCircleQuestion} />
               </span>
-              <span className={styles.kickerText}>FAQ Singkat</span>
+              <span className={styles.kickerText}>{kickerText}</span>
             </div>
 
-            <h2 className={styles.title}>Pertanyaan yang paling sering ditanya</h2>
-            <p className={styles.subtitle}>
-              Biar kamu makin yakin sebelum chat, ini jawaban ringkas untuk pertanyaan yang paling sering
-              muncul. Kalau pertanyaanmu berbeda, tinggal WhatsApp—kami jawab dengan jelas.
-            </p>
+            <h2 className={styles.title}>{title}</h2>
+            <p className={styles.subtitle}>{subtitle}</p>
 
             <ul className={styles.points} aria-label="Nilai utama layanan">
-              <li className={styles.point}>
-                <span className={styles.pointIcon} aria-hidden="true">
-                  <FontAwesomeIcon icon={faListCheck} />
-                </span>
-                Proses rapi & mudah dipahami
-              </li>
-              <li className={styles.point}>
-                <span className={styles.pointIcon} aria-hidden="true">
-                  <FontAwesomeIcon icon={faClock} />
-                </span>
-                Hemat waktu, tidak perlu antre
-              </li>
-              <li className={styles.point}>
-                <span className={styles.pointIcon} aria-hidden="true">
-                  <FontAwesomeIcon icon={faShieldHalved} />
-                </span>
-                Berkas ditangani aman & bertanggung jawab
-              </li>
-              <li className={styles.point}>
-                <span className={styles.pointIcon} aria-hidden="true">
-                  <FontAwesomeIcon icon={faComments} />
-                </span>
-                Komunikasi jelas + update status
-              </li>
+              {finalPoints.map((p, idx) => (
+                <li key={`${p.text}-${idx}`} className={styles.point}>
+                  <span className={styles.pointIcon} aria-hidden="true">
+                    <FontAwesomeIcon icon={p.icon} />
+                  </span>
+                  {p.text}
+                </li>
+              ))}
             </ul>
 
             <div className={styles.leftActions}>
@@ -117,15 +146,16 @@ export default function FaqMini() {
                 aria-label="Tanya via WhatsApp"
               >
                 <FontAwesomeIcon icon={faWhatsapp} aria-hidden="true" />
-                Tanya via WhatsApp
+                {primaryCtaLabel}
               </a>
 
               <Link
-                href="/faq"
+                href={faqHref}
                 className={`${styles.ctaSecondary} btn btnSecondary`}
                 aria-label="Ke halaman FAQ lengkap"
               >
-                Lihat FAQ lengkap <FontAwesomeIcon icon={faArrowRight} aria-hidden="true" />
+                {secondaryCtaLabel}{" "}
+                <FontAwesomeIcon icon={faArrowRight} aria-hidden="true" />
               </Link>
             </div>
           </div>
@@ -133,13 +163,13 @@ export default function FaqMini() {
           {/* RIGHT COLUMN */}
           <div className={styles.right} aria-label="Accordion FAQ">
             <div className={styles.accordion}>
-              {faqs.map((item, idx) => {
+              {finalFaqs.map((item, idx) => {
                 const isOpen = openIndex === idx;
                 const contentId = `faq-mini-panel-${idx}`;
                 const btnId = `faq-mini-button-${idx}`;
 
                 return (
-                  <div key={item.q} className={styles.item}>
+                  <div key={`${item.q}-${idx}`} className={styles.item}>
                     <button
                       id={btnId}
                       type="button"
@@ -174,7 +204,12 @@ export default function FaqMini() {
 
             <p className={styles.note}>
               Tidak menemukan jawaban yang kamu cari? Klik{" "}
-              <a href={waHref} target="_blank" rel="noopener noreferrer" className={styles.noteLink}>
+              <a
+                href={waHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.noteLink}
+              >
                 WhatsApp
               </a>{" "}
               — kami bantu cek kebutuhanmu.
