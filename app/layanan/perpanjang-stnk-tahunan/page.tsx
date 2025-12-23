@@ -4,6 +4,10 @@ import Script from "next/script";
 
 import HeroService from "@/app/components/heroService/HeroService";
 import BenefitsSummary from "@/app/components/benefitsSummary/BenefitsSummary";
+import PersyaratanDokumen from "@/app/components/persyaratanDokumen/PersyaratanDokumen";
+import AlurProses from "@/app/components/alurProses/AlurProses";
+import Estimasi from "@/app/components/estimasi/Estimasi";
+import { faClock } from "@fortawesome/free-solid-svg-icons";
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
@@ -45,29 +49,17 @@ export const metadata: Metadata = {
     title: pageTitle,
     description: pageDescription,
     images: [
-      {
-        url: ogImage,
-        width: 1200,
-        height: 630,
-        alt: "Birojasa Sahabat — Jasa Perpanjang STNK Tahunan",
-      },
+      { url: ogImage, width: 1200, height: 630, alt: "Birojasa Sahabat — Jasa Perpanjang STNK Tahunan" },
     ],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: pageTitle,
-    description: pageDescription,
-    images: [ogImage],
-  },
+  twitter: { card: "summary_large_image", title: pageTitle, description: pageDescription, images: [ogImage] },
   robots: { index: true, follow: true },
 };
 
 export default function PerpanjangStnkTahunanPage() {
   const waMessage =
     "Assalamualaikum admin, saya mau tanya perihal perpanjang STNK tahunan.";
-  const waHref = `https://wa.me/6281318927898?text=${encodeURIComponent(
-    waMessage
-  )}`;
+  const waHref = `https://wa.me/6281318927898?text=${encodeURIComponent(waMessage)}`;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -128,21 +120,10 @@ export default function PerpanjangStnkTahunanPage() {
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home", item: `${siteUrl}/` },
           { "@type": "ListItem", position: 2, name: "Layanan", item: `${siteUrl}/layanan` },
-          {
-            "@type": "ListItem",
-            position: 3,
-            name: "Perpanjang STNK Tahunan",
-            item: canonical,
-          },
+          { "@type": "ListItem", position: 3, name: "Perpanjang STNK Tahunan", item: canonical },
         ],
       },
-      {
-        "@type": "WebSite",
-        "@id": `${siteUrl}#website`,
-        url: siteUrl,
-        name: siteName,
-        inLanguage: "id-ID",
-      },
+      { "@type": "WebSite", "@id": `${siteUrl}#website`, url: siteUrl, name: siteName, inLanguage: "id-ID" },
     ],
   };
 
@@ -170,18 +151,9 @@ export default function PerpanjangStnkTahunanPage() {
             { label: "Perpanjang STNK Tahunan", href: "/layanan/perpanjang-stnk-tahunan" },
           ]}
           highlights={[
-            {
-              title: "Persyaratan jelas",
-              description: "STNK asli, KTP asli, dan surat kuasa—kami bantu cek dari awal.",
-            },
-            {
-              title: "Transparan & rapi",
-              description: "Alur proses dijelaskan, status di-update, tidak bikin bingung.",
-            },
-            {
-              title: "Berkas aman",
-              description: "Penanganan dokumen tertib dan komunikasi responsif.",
-            },
+            { title: "Persyaratan jelas", description: "STNK asli, KTP asli, dan surat kuasa—kami bantu cek dari awal." },
+            { title: "Transparan & rapi", description: "Alur proses dijelaskan, status di-update, tidak bikin bingung." },
+            { title: "Berkas aman", description: "Penanganan dokumen tertib dan komunikasi responsif." },
           ]}
         />
 
@@ -189,37 +161,85 @@ export default function PerpanjangStnkTahunanPage() {
           heading="Ringkasan manfaat perpanjang STNK tahunan"
           subheading="Biar kamu nggak bingung dan nggak capek bolak-balik—ini yang kamu dapat saat proses bareng Birojasa Sahabat."
           items={[
+            { title: "Tidak perlu antre & bolak-balik", description: "Kamu tinggal konsultasi, kami arahkan persyaratan dari awal dan bantu jalankan prosesnya dengan rapi." },
+            { title: "Persyaratan berkas jelas", description: "Untuk STNK tahunan, umumnya: STNK asli, KTP asli, dan surat kuasa (jika diwakilkan)." },
+            { title: "Biaya & langkah transparan", description: "Kami jelaskan alur dan komponen prosesnya sejak awal supaya tidak ada kejutan yang bikin ragu." },
+            { title: "Berkas ditangani dengan aman", description: "Dokumen penting ditangani tertib. Komunikasi status juga jelas supaya kamu tenang." },
+            { title: "Update progress responsif", description: "Kamu bisa tanya kapan saja via WhatsApp, dan kami bantu pantau progres secara informatif." },
+          ]}
+        />
+
+        <PersyaratanDokumen
+          heading="Persyaratan perpanjang STNK tahunan"
+          subheading="Sesuai layanan utama Birojasa Sahabat, siapkan dokumen berikut sebelum proses dimulai."
+          items={[
+            { label: "STNK Asli" },
+            { label: "KTP Asli" },
+            { label: "Surat Kuasa", note: "Jika pengurusan diwakilkan." },
+          ]}
+        />
+
+        <AlurProses
+          heading="Alur proses perpanjang STNK tahunan"
+          subheading="Langkahnya singkat dan jelas. Kamu tahu apa yang terjadi di setiap tahap."
+          steps={[
             {
-              title: "Tidak perlu antre & bolak-balik",
+              title: "Konsultasi via WhatsApp",
               description:
-                "Kamu tinggal konsultasi, kami arahkan persyaratan dari awal dan bantu jalankan prosesnya dengan rapi.",
+                "Kamu ceritakan kebutuhan dan area pengurusan. Kami tanya hal penting agar arahannya tepat.",
             },
             {
-              title: "Persyaratan berkas jelas",
+              title: "Cek persyaratan berkas",
               description:
-                "Untuk STNK tahunan, umumnya: STNK asli, KTP asli, dan surat kuasa (jika diwakilkan).",
+                "Kami cek dokumen yang kamu punya dan pastikan sesuai (STNK asli, KTP asli, surat kuasa bila diwakilkan).",
             },
             {
-              title: "Biaya & langkah transparan",
+              title: "Serah-terima berkas",
               description:
-                "Kami jelaskan alur dan komponen prosesnya sejak awal supaya tidak ada kejutan yang bikin ragu.",
+                "Berkas diserahkan sesuai kesepakatan, lalu kami mulai proses dengan penanganan yang tertib.",
             },
             {
-              title: "Berkas ditangani dengan aman",
+              title: "Proses pengurusan berjalan",
               description:
-                "Dokumen penting ditangani tertib. Komunikasi status juga jelas supaya kamu tenang.",
+                "Kami jalankan prosesnya dan kamu bisa tanya kapan saja. Status akan kami update dengan jelas.",
             },
             {
-              title: "Update progress responsif",
+              title: "Selesai & berkas kembali",
               description:
-                "Kamu bisa tanya kapan saja via WhatsApp, dan kami bantu pantau progres secara informatif.",
+                "Setelah selesai, berkas kamu kami kembalikan. Kamu dapat arahan langkah lanjut bila dibutuhkan.",
             },
           ]}
         />
 
-        {/* NEXT SECTIONS (step berikutnya):
-            - Persyaratan dokumen (detail)
-            - Alur proses
+        <Estimasi
+          heading="Estimasi perpanjang STNK tahunan"
+          subheading="Estimasi bersifat fleksibel. Kami akan kasih perkiraan setelah cek berkas dan area pengurusan—supaya jelas dan realistis."
+          points={[
+            {
+              title: "Kondisi & kelengkapan berkas",
+              description:
+                "Berkas yang lengkap dan sesuai (STNK asli, KTP asli, surat kuasa bila diwakilkan) bikin proses lebih lancar.",
+            },
+            {
+              title: "Area pengurusan",
+              description:
+                "Estimasi bisa berbeda antar area karena alur dan antrean layanan setempat tidak selalu sama.",
+            },
+            {
+              title: "Waktu pengajuan & antrean",
+              description:
+                "Perkiraan dipengaruhi jam operasional, volume antrean, dan momentum tertentu (mis. ramai di periode tertentu).",
+              icon: faClock,
+            },
+            {
+              title: "Komunikasi dan follow-up",
+              description:
+                "Kami update status secara jelas. Jika ada yang perlu dilengkapi, kami kabari lebih awal agar tidak buang waktu.",
+            },
+          ]}
+        />
+
+        {/* NEXT:
             - Estimasi
             - FAQ mini
             - CTA closing
