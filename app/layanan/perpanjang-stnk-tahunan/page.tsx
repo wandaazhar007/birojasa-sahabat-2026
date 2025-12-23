@@ -10,6 +10,7 @@ import Estimasi from "@/app/components/estimasi/Estimasi";
 import FaqMini from "@/app/components/faqMini/FaqMini";
 
 import { faClock } from "@fortawesome/free-solid-svg-icons";
+import CtaClosingService from "@/app/components/ctaClosingService/CtaClosingService";
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
@@ -332,10 +333,15 @@ export default function PerpanjangStnkTahunanPage() {
           ]}
         />
 
-        {/* NEXT:
-            - CTA closing (service)
-            - (opsional) internal links ke layanan lain
-        */}
+
+        <CtaClosingService
+          heading="Siap beresin STNK tahunan tanpa ribet?"
+          subheading="Mulai dari konsultasi dulu. Kami cek kebutuhan berkas, jelaskan alur, dan bantu prosesnya dengan komunikasi yang jelas—tanpa bikin kamu bolak-balik."
+          waMessage="Assalamualaikum admin, saya mau tanya perihal perpanjang STNK tahunan."
+          secondaryHref="/layanan"
+          secondaryLabel="Lihat layanan lainnya"
+        />
+
       </main>
     </>
   );
