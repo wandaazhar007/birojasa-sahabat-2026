@@ -19,7 +19,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/layanan/ubah-bentuk-warna",
     "/layanan/stnk-hilang-rusak",
     "/layanan/plat-custom",
-    "/reviews",
     "/tentang",
     "/faq",
     "/kontak",
