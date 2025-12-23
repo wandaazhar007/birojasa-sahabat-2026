@@ -268,3 +268,79 @@
 .bottomRight {
   line-height: 1.6;
 }
+
+.legalLink {
+  color: var(--color-text);
+  font-weight: 850;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--color-primary);
+    text-underline-offset: 0.3rem;
+  }
+
+  &:focus-visible {
+    box-shadow: var(--focus-ring);
+    border-radius: 0.6rem;
+  }
+}
+
+// .sep {
+//   margin-inline: 0.8rem;
+//   color: var(--color-text-muted);
+
+//   @include r.down(lg) {
+//     display: none;
+//   }
+// }
+
+.sep {
+  margin-inline: 0.6rem;
+  color: var(--color-text-muted);
+}
+
+
+.bottomRight {
+  line-height: 1.6;
+}
+
+.legalRow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.copyRow {
+  margin-top: 0.4rem;
+}
+
+@include r.down(lg) {
+  .bottomLeft {
+    order: 2;
+    /* Build with... jadi paling bawah */
+  }
+
+  .bottomRight {
+    order: 1;
+    /* Legal + copyright di atas */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .legalRow {
+    flex-direction: row;
+    /* tetap satu row */
+    justify-content: center;
+    flex-wrap: nowrap;
+    /* jangan turun baris */
+    gap: 0.8rem;
+  }
+
+  .copyRow {
+    margin-top: 0.8rem;
+    text-align: center;
+  }
+}

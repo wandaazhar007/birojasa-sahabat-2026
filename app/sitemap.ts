@@ -22,6 +22,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/tentang",
     "/faq",
     "/kontak",
+    "/kebijakan-privasi",
+    "/syarat-ketentuan",
   ];
 
   return routes.map((path) => ({

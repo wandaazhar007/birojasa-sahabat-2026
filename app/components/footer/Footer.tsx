@@ -173,8 +173,37 @@ export default function Footer() {
             in Detroit, MI. USA
           </div>
 
-          <div className={styles.bottomRight}>
+          {/* <div className={styles.bottomRight}>
             © {year} Birojasa Sahabat. All rights reserved.
+          </div> */}
+
+          {/* <div className={styles.bottomRight}>
+            <Link href="/kebijakan-privasi" className={styles.legalLink}>
+              Kebijakan Privasi
+            </Link>
+            <Link href="/syarat-ketentuan" className={styles.legalLink}>
+              Syarat & Ketentuan
+            </Link>
+            <span className={styles.sep} aria-hidden="true">•</span>
+            © {year} Birojasa Sahabat. All rights reserved.
+          </div> */}
+
+          <div className={styles.bottomRight}>
+            <div className={styles.legalRow} aria-label="Legal links">
+              <Link href="/kebijakan-privasi" className={styles.legalLink}>
+                Kebijakan Privasi
+              </Link>
+              <span className={styles.sep} aria-hidden="true">
+                •
+              </span>
+              <Link href="/syarat-ketentuan" className={styles.legalLink}>
+                Syarat &amp; Ketentuan
+              </Link>
+            </div>
+
+            <div className={styles.copyRow}>
+              © {year} Birojasa Sahabat. All rights reserved.
+            </div>
           </div>
         </div>
       </div>
