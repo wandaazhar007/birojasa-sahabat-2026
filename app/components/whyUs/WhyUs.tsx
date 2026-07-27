@@ -41,15 +41,15 @@ const reasons: Reason[] = [
   },
 ];
 
-const waMessage = "Assalamualaikum admin Birojasa Sahabat";
+const waMessage = "Assalamualaikum admin Biro Jasa Sahabat";
 const waHref = `https://wa.me/6281318927898?text=${encodeURIComponent(waMessage)}`;
 
 export default function WhyUs() {
   return (
-    <section className={styles.section} aria-label="Kenapa memilih Birojasa Sahabat">
+    <section className={styles.section} aria-label="Kenapa memilih Biro Jasa Sahabat">
       <div className={styles.inner}>
         <header className={styles.header}>
-          <h2 className={styles.title}>Kenapa banyak orang memilih Birojasa Sahabat</h2>
+          <h2 className={styles.title}>Kenapa banyak orang memilih Biro Jasa Sahabat</h2>
           <p className={styles.subtitle}>
             Fokus kami sederhana: bikin pengurusan surat kendaraan terasa{" "}
             <strong>lebih aman</strong>, <strong>lebih jelas</strong>, dan{" "}

@@ -13,9 +13,10 @@ const siteUrl =
   "https://birojasa-sahabat.com";
 
 export const metadata: Metadata = {
-  title: "Halaman Tidak Ditemukan | Birojasa Sahabat",
+  // Root layout applies "%s | {siteName}", so this stays unsuffixed.
+  title: "Halaman Tidak Ditemukan",
   description:
-    "Halaman yang kamu cari tidak ditemukan. Kembali ke beranda atau lihat layanan Birojasa Sahabat. Konsultasi gratis via WhatsApp +6281318927898.",
+    "Halaman yang kamu cari tidak ditemukan. Kembali ke beranda atau lihat layanan Biro Jasa Sahabat. Konsultasi gratis via WhatsApp +6281318927898.",
   alternates: {
     canonical: `${siteUrl}/404`,
   },
@@ -24,30 +25,30 @@ export const metadata: Metadata = {
     type: "website",
     locale: "id_ID",
     url: `${siteUrl}/404`,
-    siteName: "Birojasa Sahabat",
-    title: "Halaman Tidak Ditemukan | Birojasa Sahabat",
+    siteName: "Biro Jasa Sahabat",
+    title: "Halaman Tidak Ditemukan | Biro Jasa Sahabat",
     description:
-      "Halaman yang kamu cari tidak ditemukan. Kembali ke beranda atau lihat layanan Birojasa Sahabat.",
+      "Halaman yang kamu cari tidak ditemukan. Kembali ke beranda atau lihat layanan Biro Jasa Sahabat.",
     images: [
       {
         url: `${siteUrl}/images/og-birojasa-sahabat.jpg`,
         width: 1200,
         height: 630,
-        alt: "Birojasa Sahabat",
+        alt: "Biro Jasa Sahabat",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Halaman Tidak Ditemukan | Birojasa Sahabat",
+    title: "Halaman Tidak Ditemukan | Biro Jasa Sahabat",
     description:
-      "Halaman yang kamu cari tidak ditemukan. Kembali ke beranda atau lihat layanan Birojasa Sahabat.",
+      "Halaman yang kamu cari tidak ditemukan. Kembali ke beranda atau lihat layanan Biro Jasa Sahabat.",
     images: [`${siteUrl}/images/og-birojasa-sahabat.jpg`],
   },
 };
 
 export default function NotFound() {
-  const waMessage = "Assalamualaikum admin Birojasa Sahabat, saya mau konsultasi.";
+  const waMessage = "Assalamualaikum admin Biro Jasa Sahabat, saya mau konsultasi.";
   const waHref = `https://wa.me/6281318927898?text=${encodeURIComponent(
     waMessage
   )}`;

@@ -49,7 +49,7 @@ export default function Testimoni() {
         name: "Dwi Saputra",
         area: "Tangerang Selatan",
         title: "Berkas ditangani rapi",
-        text: "Saya tipe yang detail, tapi Birojasa Sahabat bikin saya tenang. Semua dijelaskan jelas, berkas ditangani tertib, dan penyelesaiannya terasa terarah.",
+        text: "Saya tipe yang detail, tapi Biro Jasa Sahabat bikin saya tenang. Semua dijelaskan jelas, berkas ditangani tertib, dan penyelesaiannya terasa terarah.",
         tag: "Aman",
       },
       {
@@ -152,7 +152,7 @@ export default function Testimoni() {
   };
 
   return (
-    <section className={styles.section} aria-label="Testimoni pelanggan Birojasa Sahabat">
+    <section className={styles.section} aria-label="Testimoni pelanggan Biro Jasa Sahabat">
       <div className={styles.inner}>
         <header className={styles.header}>
           <div className={styles.headLeft}>

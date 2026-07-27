@@ -12,7 +12,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 
-const waMessage = "Assalamualaikum admin Birojasa Sahabat, saya mau konsultasi.";
+const waMessage = "Assalamualaikum admin Biro Jasa Sahabat, saya mau konsultasi.";
 const waHref = `https://wa.me/6281318927898?text=${encodeURIComponent(waMessage)}`;
 
 type PainPoint = {
@@ -41,7 +41,7 @@ const painPoints: PainPoint[] = [
 
 export default function BrandStory() {
   return (
-    <section className={styles.section} aria-label="Cerita Birojasa Sahabat">
+    <section className={styles.section} aria-label="Cerita Biro Jasa Sahabat">
       <div className={styles.inner}>
         <div className={styles.grid}>
           {/* LEFT */}
@@ -51,7 +51,7 @@ export default function BrandStory() {
               <span className={styles.kickerText}>Brand Story</span>
             </div>
 
-            <h2 className={styles.title}>Kenapa Birojasa Sahabat ada?</h2>
+            <h2 className={styles.title}>Kenapa Biro Jasa Sahabat ada?</h2>
 
             <p className={styles.subtitle}>
               Kami melihat satu pola yang sama: banyak orang ingin mengurus surat kendaraan dengan benar,
@@ -60,7 +60,7 @@ export default function BrandStory() {
             </p>
 
             <p className={styles.desc}>
-              Dari situ, Birojasa Sahabat hadir sebagai “teman” yang membantu dari awal: jelaskan
+              Dari situ, Biro Jasa Sahabat hadir sebagai “teman” yang membantu dari awal: jelaskan
               persyaratan, rapikan alur proses, dan jaga komunikasi agar kamu tahu apa yang sedang terjadi.
               Tujuannya sederhana: pengurusan surat kendaraan jadi lebih <strong>jelas</strong>,{" "}
               <strong>aman</strong>, dan <strong>nyaman</strong>.

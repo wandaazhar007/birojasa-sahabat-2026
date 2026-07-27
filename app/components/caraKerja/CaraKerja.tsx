@@ -19,7 +19,7 @@ type Step = {
   icon: any;
 };
 
-const waMessage = "Assalamualaikum admin Birojasa Sahabat, saya mau konsultasi.";
+const waMessage = "Assalamualaikum admin Biro Jasa Sahabat, saya mau konsultasi.";
 const waHref = `https://wa.me/6281318927898?text=${encodeURIComponent(waMessage)}`;
 
 const steps: Step[] = [
@@ -52,7 +52,7 @@ const steps: Step[] = [
 
 export default function CaraKerja() {
   return (
-    <section className={styles.section} aria-label="Cara kerja Birojasa Sahabat">
+    <section className={styles.section} aria-label="Cara kerja Biro Jasa Sahabat">
       <div className={styles.inner}>
         <header className={styles.header}>
           <div className={styles.kicker}>

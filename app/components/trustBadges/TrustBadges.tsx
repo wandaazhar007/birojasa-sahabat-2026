@@ -34,12 +34,12 @@ const assurances = [
 
 export default function TrustBadges() {
   return (
-    <section className={styles.section} aria-label="Keunggulan layanan Birojasa Sahabat">
+    <section className={styles.section} aria-label="Keunggulan layanan Biro Jasa Sahabat">
       <div className={styles.inner}>
         <header className={styles.header}>
           <h2 className={styles.title}>Lebih tenang urus surat kendaraan</h2>
           <p className={styles.subtitle}>
-            Birojasa Sahabat fokus pada layanan yang <strong>aman</strong>,{" "}
+            Biro Jasa Sahabat fokus pada layanan yang <strong>aman</strong>,{" "}
             <strong>jelas</strong>, dan <strong>ramah</strong>—supaya kamu tidak
             perlu repot.
           </p>

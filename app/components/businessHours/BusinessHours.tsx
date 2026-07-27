@@ -127,7 +127,7 @@ export default function BusinessHours() {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Peta lokasi Birojasa Sahabat"
+                  title="Peta lokasi Biro Jasa Sahabat"
                 />
               </div>
             </div>

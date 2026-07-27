@@ -93,11 +93,11 @@ export default function Navbar() {
   return (
     <header className={styles.header}>
       <div className={styles.inner}>
-        <Link href="/" className={styles.brand} aria-label="Birojasa Sahabat - Home">
+        <Link href="/" className={styles.brand} aria-label="Biro Jasa Sahabat - Home">
           <span className={styles.logoWrap} aria-hidden="true">
             <Image
               src="/images/logo-birojasa-sahabat.jpg"
-              alt="Logo Birojasa Sahabat"
+              alt="Logo Biro Jasa Sahabat"
               width={44}
               height={44}
               priority

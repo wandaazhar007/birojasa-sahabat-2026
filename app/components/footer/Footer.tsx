@@ -19,23 +19,23 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className={styles.footer} aria-label="Footer Birojasa Sahabat">
+    <footer className={styles.footer} aria-label="Footer Biro Jasa Sahabat">
       {/* Top */}
       <div className={styles.top}>
         {/* Left */}
         <div className={styles.left}>
-          <Link href="/" className={styles.brand} aria-label="Birojasa Sahabat - Home">
+          <Link href="/" className={styles.brand} aria-label="Biro Jasa Sahabat - Home">
             <span className={styles.logoWrap} aria-hidden="true">
               <Image
                 src="/images/logo-birojasa-sahabat.jpg"
-                alt="Logo Birojasa Sahabat"
+                alt="Logo Biro Jasa Sahabat"
                 width={48}
                 height={48}
                 className={styles.logo}
               />
             </span>
 
-            <span className={styles.brandText}>Birojasa Sahabat</span>
+            <span className={styles.brandText}>Biro Jasa Sahabat</span>
           </Link>
 
           <p className={styles.desc}>
@@ -51,7 +51,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               className={styles.iconBtn}
-              aria-label="Chat WhatsApp Birojasa Sahabat"
+              aria-label="Chat WhatsApp Biro Jasa Sahabat"
               title="WhatsApp"
             >
               <FontAwesomeIcon icon={faWhatsapp} />
@@ -187,7 +187,7 @@ export default function Footer() {
             </div>
 
             <div className={styles.copyRow}>
-              © {year} Birojasa Sahabat. All rights reserved.
+              © {year} Biro Jasa Sahabat. All rights reserved.
             </div>
           </div>
         </div>

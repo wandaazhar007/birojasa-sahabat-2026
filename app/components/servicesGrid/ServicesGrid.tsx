@@ -96,7 +96,7 @@ function ServiceCard({ item }: { item: ServiceItem }) {
 
 export default function ServicesGrid() {
   return (
-    <section className={styles.section} aria-label="Daftar layanan Birojasa Sahabat">
+    <section className={styles.section} aria-label="Daftar layanan Biro Jasa Sahabat">
       <div className={styles.inner}>
         <header className={styles.header}>
           <h2 className={styles.title}>Layanan yang paling sering dibutuhkan</h2>

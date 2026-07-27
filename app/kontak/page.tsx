@@ -9,10 +9,13 @@ const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
   "https://birojasa-sahabat.com";
 
-const siteName = "Birojasa Sahabat";
+const siteName = "Biro Jasa Sahabat";
 const ogImage = `${siteUrl}/images/og-birojasa-sahabat.jpg`;
 
-const pageTitle = `Kontak & Lokasi | ${siteName}`;
+const baseTitle = "Kontak & Lokasi";
+// Root layout applies "%s | {siteName}", so metadata.title stays unsuffixed.
+// OpenGraph/Twitter titles aren't templated, so they use the full form.
+const pageTitle = `${baseTitle} | ${siteName}`;
 const pageDescription =
   "Hubungi Biro Jasa Sahabat via WhatsApp +6281318927898. Alamat: Serua Indah, Ciputat. Lihat lokasi di Google Maps dan konsultasi gratis.";
 
@@ -29,7 +32,7 @@ const mapsEmbedSrc =
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: pageTitle,
+  title: baseTitle,
   description: pageDescription,
   keywords: [
     "kontak biro jasa stnk",
@@ -55,7 +58,7 @@ export const metadata: Metadata = {
         url: ogImage,
         width: 1200,
         height: 630,
-        alt: "Birojasa Sahabat — Kontak & Lokasi",
+        alt: "Biro Jasa Sahabat — Kontak & Lokasi",
       },
     ],
   },

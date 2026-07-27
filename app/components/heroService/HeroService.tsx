@@ -59,7 +59,7 @@ export default function HeroService({
   description,
   badgeText = "Layanan",
   primaryCtaLabel = "Konsultasi Gratis",
-  primaryCtaMessage = "Assalamualaikum admin, saya mau tanya perihal layanan Birojasa Sahabat.",
+  primaryCtaMessage = "Assalamualaikum admin, saya mau tanya perihal layanan Biro Jasa Sahabat.",
   secondaryCtaLabel = "Lihat semua layanan",
   secondaryCtaHref = "/layanan",
   highlights = defaultHighlights,

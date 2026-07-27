@@ -21,17 +21,20 @@ const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
   "https://birojasa-sahabat.com";
 
-const siteName = "Birojasa Sahabat";
+const siteName = "Biro Jasa Sahabat";
 const ogImage = `${siteUrl}/images/og-birojasa-sahabat.jpg`;
 const canonical = `${siteUrl}/syarat-ketentuan`;
 
-const pageTitle = `Syarat & Ketentuan | ${siteName}`;
+const baseTitle = "Syarat & Ketentuan";
+// Root layout applies "%s | {siteName}", so metadata.title stays unsuffixed.
+// OpenGraph/Twitter titles aren't templated, so they use the full form.
+const pageTitle = `${baseTitle} | ${siteName}`;
 const pageDescription =
-  "Syarat & ketentuan layanan Birojasa Sahabat: ketentuan penggunaan layanan pengurusan surat kendaraan, tanggung jawab pelanggan, alur kerja, estimasi, dan komunikasi yang transparan.";
+  "Syarat & ketentuan layanan Biro Jasa Sahabat: ketentuan penggunaan, tanggung jawab pelanggan, alur kerja, dan estimasi proses.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: pageTitle,
+  title: baseTitle,
   description: pageDescription,
   keywords: [
     "syarat dan ketentuan biro jasa",
@@ -39,7 +42,7 @@ export const metadata: Metadata = {
     "ketentuan layanan pengurusan STNK",
     "biro jasa Ciputat",
     "biro jasa Tangerang Selatan",
-    "Birojasa Sahabat",
+    "Biro Jasa Sahabat",
   ],
   alternates: { canonical },
   openGraph: {
@@ -54,7 +57,7 @@ export const metadata: Metadata = {
         url: ogImage,
         width: 1200,
         height: 630,
-        alt: "Birojasa Sahabat — Syarat & Ketentuan",
+        alt: "Biro Jasa Sahabat — Syarat & Ketentuan",
       },
     ],
   },
@@ -69,7 +72,7 @@ export const metadata: Metadata = {
 
 export default function SyaratKetentuanPage() {
   const waMessage =
-    "Assalamualaikum admin Birojasa Sahabat, saya mau tanya syarat & ketentuan layanan.";
+    "Assalamualaikum admin Biro Jasa Sahabat, saya mau tanya syarat & ketentuan layanan.";
   const waHref = `https://wa.me/6281318927898?text=${encodeURIComponent(
     waMessage
   )}`;
@@ -110,7 +113,7 @@ export default function SyaratKetentuanPage() {
       {
         "@type": "CreativeWork",
         "@id": `${canonical}#terms`,
-        name: "Syarat & Ketentuan Layanan Birojasa Sahabat",
+        name: "Syarat & Ketentuan Layanan Biro Jasa Sahabat",
         url: canonical,
         inLanguage: "id-ID",
         dateModified: lastUpdated,
@@ -226,7 +229,7 @@ export default function SyaratKetentuanPage() {
                 <ul className={styles.ul}>
                   <li>
                     Syarat & ketentuan ini berlaku untuk konsultasi dan penggunaan layanan{" "}
-                    <strong>pengurusan surat kendaraan</strong> yang disediakan Birojasa Sahabat.
+                    <strong>pengurusan surat kendaraan</strong> yang disediakan Biro Jasa Sahabat.
                   </li>
                   <li>
                     Layanan dapat mencakup (sesuai kebutuhan klien): perpanjangan STNK tahunan, STNK 5
@@ -428,7 +431,7 @@ export default function SyaratKetentuanPage() {
                   <a
                     href="mailto:birojasa-sahabat@gmail.com"
                     className={`btn btnSecondary ${styles.closeAlt}`}
-                    aria-label="Email Birojasa Sahabat"
+                    aria-label="Email Biro Jasa Sahabat"
                   >
                     <FontAwesomeIcon icon={faEnvelope} aria-hidden="true" />
                     Email

@@ -19,7 +19,7 @@ const mapsHref = "https://maps.app.goo.gl/QTkL6nb7D7fuAxmz6";
 
 export default function HeroContact() {
   return (
-    <section className={styles.section} aria-label="Kontak Birojasa Sahabat">
+    <section className={styles.section} aria-label="Kontak Biro Jasa Sahabat">
       <div className={styles.inner}>
         <div className={styles.grid}>
           {/* LEFT */}
@@ -32,7 +32,7 @@ export default function HeroContact() {
             </div>
 
             <h1 className={styles.title}>
-              Hubungi <span className={styles.brand}>Birojasa Sahabat</span>
+              Hubungi <span className={styles.brand}>Biro Jasa Sahabat</span>
             </h1>
 
             <p className={styles.subtitle}>
@@ -46,7 +46,7 @@ export default function HeroContact() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`${styles.ctaPrimary} btn btnPrimary`}
-                aria-label="Chat WhatsApp Birojasa Sahabat"
+                aria-label="Chat WhatsApp Biro Jasa Sahabat"
               >
                 <FontAwesomeIcon icon={faWhatsapp} aria-hidden="true" />
                 Chat WhatsApp sekarang
@@ -55,7 +55,7 @@ export default function HeroContact() {
               <Link
                 href="/layanan"
                 className={`${styles.ctaSecondary} btn btnSecondary`}
-                aria-label="Lihat layanan Birojasa Sahabat"
+                aria-label="Lihat layanan Biro Jasa Sahabat"
               >
                 Lihat layanan <FontAwesomeIcon icon={faArrowRight} aria-hidden="true" />
               </Link>
@@ -83,7 +83,7 @@ export default function HeroContact() {
                 href={mapsHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Buka lokasi Birojasa Sahabat di Google Maps"
+                aria-label="Buka lokasi Biro Jasa Sahabat di Google Maps"
               >
                 <span className={styles.infoIcon} aria-hidden="true">
                   <FontAwesomeIcon icon={faLocationDot} />

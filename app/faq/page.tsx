@@ -17,17 +17,20 @@ const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
   "https://birojasa-sahabat.com";
 
-const siteName = "Birojasa Sahabat";
+const siteName = "Biro Jasa Sahabat";
 const ogImage = `${siteUrl}/images/og-birojasa-sahabat.jpg`;
 const canonical = `${siteUrl}/faq`;
 
-const pageTitle = `FAQ | ${siteName}`;
+const baseTitle = "FAQ";
+// Root layout applies "%s | {siteName}", so metadata.title stays unsuffixed.
+// OpenGraph/Twitter titles aren't templated, so they use the full form.
+const pageTitle = `${baseTitle} | ${siteName}`;
 const pageDescription =
-  "Pertanyaan yang sering ditanyakan tentang syarat, proses, estimasi, biaya, dan keamanan berkas untuk pengurusan STNK & dokumen kendaraan. Konsultasi gratis via WhatsApp +6281318927898.";
+  "Pertanyaan seputar syarat, proses, estimasi, dan keamanan berkas pengurusan STNK. Konsultasi gratis via WhatsApp +6281318927898.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: pageTitle,
+  title: baseTitle,
   description: pageDescription,
   keywords: [
     "FAQ pengurusan STNK",
@@ -41,7 +44,7 @@ export const metadata: Metadata = {
     "biro jasa STNK Ciputat",
     "biro jasa STNK Tangerang Selatan",
     "biro jasa STNK Jabodetabek",
-    "Birojasa Sahabat",
+    "Biro Jasa Sahabat",
   ],
   alternates: { canonical },
   openGraph: {
@@ -56,7 +59,7 @@ export const metadata: Metadata = {
         url: ogImage,
         width: 1200,
         height: 630,
-        alt: "Birojasa Sahabat — FAQ",
+        alt: "Biro Jasa Sahabat — FAQ",
       },
     ],
   },
@@ -136,7 +139,7 @@ export default function FaqPage() {
       a: "Estimasi tergantung kelengkapan berkas, jenis layanan, kebutuhan cek fisik, dan ketentuan/antrean wilayah. Yang pasti, kami bantu alur supaya lebih tertib dan kamu tetap dapat update status agar tidak menebak-nebak progress.",
     },
     {
-      q: "Wilayah layanan Birojasa Sahabat di mana saja?",
+      q: "Wilayah layanan Biro Jasa Sahabat di mana saja?",
       a: "Wilayah layanan utama: Jabodetabek (dan sekitarnya sesuai jangkauan operasional). Kalau kamu berada di sekitar Ciputat–Tangerang Selatan, chat dulu—kami cekkan apakah prosesnya bisa kami bantu.",
     },
     {

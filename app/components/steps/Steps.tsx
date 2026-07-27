@@ -45,12 +45,12 @@ const steps: StepItem[] = [
   },
 ];
 
-const waMessage = "Assalamualaikum admin Birojasa Sahabat";
+const waMessage = "Assalamualaikum admin Biro Jasa Sahabat";
 const waHref = `https://wa.me/6281318927898?text=${encodeURIComponent(waMessage)}`;
 
 export default function Steps() {
   return (
-    <section className={styles.section} aria-label="Cara kerja Birojasa Sahabat">
+    <section className={styles.section} aria-label="Cara kerja Biro Jasa Sahabat">
       <div className={styles.inner}>
         <header className={styles.header}>
           <h2 className={styles.title}>Cara kerja yang rapi, supaya kamu nggak ribet</h2>

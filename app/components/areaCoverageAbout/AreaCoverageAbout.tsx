@@ -12,7 +12,7 @@ import {
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 
 const waMessage =
-  "Assalamualaikum admin Birojasa Sahabat, saya mau tanya jangkauan layanan untuk area saya.";
+  "Assalamualaikum admin Biro Jasa Sahabat, saya mau tanya jangkauan layanan untuk area saya.";
 const waHref = `https://wa.me/6281318927898?text=${encodeURIComponent(waMessage)}`;
 
 const mapHref = "https://maps.app.goo.gl/QTkL6nb7D7fuAxmz6";
@@ -34,7 +34,7 @@ const areas = [
 
 export default function AreaCoverageAbout() {
   return (
-    <section className={styles.section} aria-label="Area jangkauan Birojasa Sahabat">
+    <section className={styles.section} aria-label="Area jangkauan Biro Jasa Sahabat">
       <div className={styles.inner}>
         <div className={styles.grid}>
           {/* LEFT */}

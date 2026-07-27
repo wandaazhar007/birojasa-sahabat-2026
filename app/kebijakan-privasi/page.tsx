@@ -19,24 +19,27 @@ const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
   "https://birojasa-sahabat.com";
 
-const siteName = "Birojasa Sahabat";
+const siteName = "Biro Jasa Sahabat";
 const ogImage = `${siteUrl}/images/og-birojasa-sahabat.jpg`;
 const canonical = `${siteUrl}/kebijakan-privasi`;
 
-const pageTitle = `Kebijakan Privasi | ${siteName}`;
+const baseTitle = "Kebijakan Privasi";
+// Root layout applies "%s | {siteName}", so metadata.title stays unsuffixed.
+// OpenGraph/Twitter titles aren't templated, so they use the full form.
+const pageTitle = `${baseTitle} | ${siteName}`;
 const pageDescription =
-  "Kebijakan privasi Birojasa Sahabat: bagaimana kami mengumpulkan, menggunakan, menyimpan, dan menjaga kerahasiaan data & dokumen klien untuk pengurusan STNK dan berkas kendaraan.";
+  "Kebijakan privasi Biro Jasa Sahabat: cara kami mengumpulkan, menggunakan, dan menjaga kerahasiaan data & dokumen klien.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: pageTitle,
+  title: baseTitle,
   description: pageDescription,
   keywords: [
     "kebijakan privasi biro jasa",
     "privacy policy biro jasa",
     "keamanan dokumen STNK BPKB",
     "kerahasiaan data klien",
-    "Birojasa Sahabat",
+    "Biro Jasa Sahabat",
     "biro jasa Ciputat",
     "biro jasa Tangerang Selatan",
   ],
@@ -53,7 +56,7 @@ export const metadata: Metadata = {
         url: ogImage,
         width: 1200,
         height: 630,
-        alt: "Birojasa Sahabat — Kebijakan Privasi",
+        alt: "Biro Jasa Sahabat — Kebijakan Privasi",
       },
     ],
   },
@@ -68,7 +71,7 @@ export const metadata: Metadata = {
 
 export default function KebijakanPrivasiPage() {
   const waMessage =
-    "Assalamualaikum admin Birojasa Sahabat, saya mau tanya terkait kebijakan privasi dan keamanan dokumen.";
+    "Assalamualaikum admin Biro Jasa Sahabat, saya mau tanya terkait kebijakan privasi dan keamanan dokumen.";
   const waHref = `https://wa.me/6281318927898?text=${encodeURIComponent(
     waMessage
   )}`;
@@ -136,7 +139,7 @@ export default function KebijakanPrivasiPage() {
         <div className="container">
           {/* HERO */}
           <section
-            aria-label="Kebijakan Privasi Birojasa Sahabat"
+            aria-label="Kebijakan Privasi Biro Jasa Sahabat"
             style={{
               paddingBlock: "3.2rem",
               background:
@@ -194,7 +197,7 @@ export default function KebijakanPrivasiPage() {
                   maxWidth: "78rem",
                 }}
               >
-                Birojasa Sahabat berkomitmen menjaga kerahasiaan data dan dokumen klien melalui proses
+                Biro Jasa Sahabat berkomitmen menjaga kerahasiaan data dan dokumen klien melalui proses
                 yang rapi (pengambilan, penyimpanan, dan penyerahan berkas) serta komunikasi yang jelas
                 dan transparan.
               </p>
@@ -239,7 +242,7 @@ export default function KebijakanPrivasiPage() {
                 <a
                   href="mailto:birojasa-sahabat@gmail.com"
                   className="btn btnSecondary"
-                  aria-label="Kirim email ke Birojasa Sahabat"
+                  aria-label="Kirim email ke Biro Jasa Sahabat"
                 >
                   <FontAwesomeIcon icon={faEnvelope} aria-hidden="true" />
                   Email Kami

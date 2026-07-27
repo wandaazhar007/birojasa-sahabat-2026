@@ -12,16 +12,19 @@ const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
   "https://birojasa-sahabat.com";
 
-const siteName = "Birojasa Sahabat";
+const siteName = "Biro Jasa Sahabat";
 const ogImage = `${siteUrl}/images/og-birojasa-sahabat.jpg`;
 
-const pageTitle = `Tentang Birojasa Sahabat — Aman, Transparan, dan Proses Jelas`;
+const baseTitle = "Tentang Kami — Aman, Transparan, dan Proses Jelas";
+// Root layout applies "%s | {siteName}", so metadata.title stays unsuffixed.
+// OpenGraph/Twitter titles aren't templated, so they use the full form.
+const pageTitle = `${baseTitle} | ${siteName}`;
 const pageDescription =
-  "Kenali Birojasa Sahabat: biro jasa pengurusan STNK & berkas kendaraan untuk orang sibuk. Proses jelas, komunikasi responsif, berkas aman, dan biaya transparan.";
+  "Kenali Biro Jasa Sahabat: biro jasa pengurusan STNK & berkas kendaraan untuk orang sibuk. Proses jelas, komunikasi responsif, berkas aman, dan biaya transparan.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: pageTitle,
+  title: baseTitle,
   description: pageDescription,
   keywords: [
     "tentang biro jasa sahabat",
@@ -49,7 +52,7 @@ export const metadata: Metadata = {
         url: ogImage,
         width: 1200,
         height: 630,
-        alt: "Birojasa Sahabat — Tentang Kami",
+        alt: "Biro Jasa Sahabat — Tentang Kami",
       },
     ],
   },
@@ -73,7 +76,7 @@ export default function TentangPage() {
     "@type": "AboutPage",
     "@id": `${aboutUrl}#about`,
     url: aboutUrl,
-    name: "Tentang Birojasa Sahabat",
+    name: "Tentang Biro Jasa Sahabat",
     description: pageDescription,
     about: {
       "@type": "ProfessionalService",

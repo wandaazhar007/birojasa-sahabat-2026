@@ -13,14 +13,14 @@ import {
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 
 const waMessage =
-  "Assalamualaikum admin Birojasa Sahabat, saya mau konsultasi perihal surat-surat kendaraan.";
+  "Assalamualaikum admin Biro Jasa Sahabat, saya mau konsultasi perihal surat-surat kendaraan.";
 const waHref = `https://wa.me/6281318927898?text=${encodeURIComponent(waMessage)}`;
 
 const mapHref = "https://maps.app.goo.gl/QTkL6nb7D7fuAxmz6";
 
 export default function CtaHome() {
   return (
-    <section className={styles.section} aria-label="CTA akhir Birojasa Sahabat">
+    <section className={styles.section} aria-label="CTA akhir Biro Jasa Sahabat">
       <div className={styles.inner}>
         <div className={styles.panel}>
           {/* LEFT */}
@@ -30,7 +30,7 @@ export default function CtaHome() {
                 Siap urus STNK tanpa ribet? Mulai dari chat dulu.
               </h2>
               <p className={styles.subtitle}>
-                Birojasa Sahabat bantu pengurusan surat kendaraan dengan{" "}
+                Biro Jasa Sahabat bantu pengurusan surat kendaraan dengan{" "}
                 <strong>proses yang jelas</strong>, <strong>biaya transparan</strong>,
                 dan penanganan berkas yang <strong>aman</strong>. Kamu fokus aktivitas—kami
                 bantu urusnya.
@@ -115,7 +115,7 @@ export default function CtaHome() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.mapBtn}
-                  aria-label="Buka lokasi Birojasa Sahabat di Google Maps"
+                  aria-label="Buka lokasi Biro Jasa Sahabat di Google Maps"
                 >
                   Buka Google Maps <FontAwesomeIcon icon={faArrowRight} aria-hidden="true" />
                 </a>
@@ -125,7 +125,7 @@ export default function CtaHome() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.waMini}
-                  aria-label="Chat WhatsApp Birojasa Sahabat"
+                  aria-label="Chat WhatsApp Biro Jasa Sahabat"
                 >
                   <FontAwesomeIcon icon={faWhatsapp} aria-hidden="true" />
                   WhatsApp: +62 813-1892-7898

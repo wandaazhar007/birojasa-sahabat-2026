@@ -53,7 +53,7 @@ export default function FaqMini({
   faqs,
   points,
 
-  waMessage = "Assalamualaikum admin Birojasa Sahabat",
+  waMessage = "Assalamualaikum admin Biro Jasa Sahabat",
   waNumber = "6281318927898",
   faqHref = "/faq",
   primaryCtaLabel = "Tanya via WhatsApp",
@@ -111,7 +111,7 @@ export default function FaqMini({
   };
 
   return (
-    <section className={styles.section} aria-label="FAQ singkat Birojasa Sahabat">
+    <section className={styles.section} aria-label="FAQ singkat Biro Jasa Sahabat">
       <div className={styles.inner}>
         <div className={styles.grid}>
           {/* LEFT COLUMN */}

@@ -12,12 +12,12 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 
-const waMessage = "Assalamualaikum admin Birojasa Sahabat";
+const waMessage = "Assalamualaikum admin Biro Jasa Sahabat";
 const waHref = `https://wa.me/6281318927898?text=${encodeURIComponent(waMessage)}`;
 
 export default function HeroMain() {
   return (
-    <section className={styles.hero} aria-label="Hero Birojasa Sahabat">
+    <section className={styles.hero} aria-label="Hero Biro Jasa Sahabat">
       <div className={styles.inner}>
         {/* LEFT */}
         <div className={styles.left}>
@@ -35,7 +35,7 @@ export default function HeroMain() {
           </p>
 
           <p className={styles.desc}>
-            Birojasa Sahabat membantu pengurusan <strong>STNK</strong> dan
+            Biro Jasa Sahabat membantu pengurusan <strong>STNK</strong> dan
             kebutuhan surat kendaraan dengan alur yang rapi, komunikasi yang
             ramah, serta <strong>biaya transparan</strong>. Melayani{" "}
             <strong>Ciputat</strong>, <strong>Tangerang Selatan</strong>, dan
@@ -90,7 +90,7 @@ export default function HeroMain() {
           <div className={styles.imageWrap}>
             <Image
               src="/images/hero-birojasa-sahabat.jpg"
-              alt="Birojasa Sahabat membantu pengurusan surat kendaraan"
+              alt="Biro Jasa Sahabat membantu pengurusan surat kendaraan"
               width={980}
               height={980}
               priority

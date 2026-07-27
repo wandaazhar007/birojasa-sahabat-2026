@@ -8,7 +8,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 
-const waMessage = "Assalamualaikum admin Birojasa Sahabat";
+const waMessage = "Assalamualaikum admin Biro Jasa Sahabat";
 const waHref = `https://wa.me/6281318927898?text=${encodeURIComponent(waMessage)}`;
 
 const mapHref = "https://maps.app.goo.gl/QTkL6nb7D7fuAxmz6";
@@ -24,12 +24,12 @@ const areas = [
 
 export default function AreaCoverage() {
   return (
-    <section className={styles.section} aria-label="Area jangkauan layanan Birojasa Sahabat">
+    <section className={styles.section} aria-label="Area jangkauan layanan Biro Jasa Sahabat">
       <div className={styles.inner}>
         <header className={styles.header}>
           <h2 className={styles.title}>Area Jangkauan Layanan</h2>
           <p className={styles.subtitle}>
-            Birojasa Sahabat melayani pengurusan surat kendaraan untuk wilayah{" "}
+            Biro Jasa Sahabat melayani pengurusan surat kendaraan untuk wilayah{" "}
             <strong>Jabodetabek</strong>—dengan fokus utama{" "}
             <strong>Ciputat</strong> dan <strong>Tangerang Selatan</strong>.
             Untuk area lain, kamu bisa tanya dulu agar kami pastikan jangkauan operasionalnya.

@@ -11,12 +11,12 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 
-const waMessage = "Assalamualaikum admin Birojasa Sahabat, saya mau konsultasi.";
+const waMessage = "Assalamualaikum admin Biro Jasa Sahabat, saya mau konsultasi.";
 const waHref = `https://wa.me/6281318927898?text=${encodeURIComponent(waMessage)}`;
 
 export default function HeroAbout() {
   return (
-    <section className={styles.section} aria-label="Tentang Birojasa Sahabat">
+    <section className={styles.section} aria-label="Tentang Biro Jasa Sahabat">
       <div className={styles.inner}>
         <div className={styles.grid}>
           {/* LEFT */}
@@ -28,7 +28,7 @@ export default function HeroAbout() {
               <span className={styles.kickerText}>Tentang Kami</span>
             </div>
 
-            <h1 className={styles.title}>Birojasa Sahabat</h1>
+            <h1 className={styles.title}>Biro Jasa Sahabat</h1>
 
             <p className={styles.subtitle}>
               Kami hadir untuk membantu pengurusan surat kendaraan agar terasa{" "}

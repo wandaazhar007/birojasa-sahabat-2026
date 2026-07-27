@@ -48,7 +48,7 @@ const values: Pillar[] = [
 
 export default function VisiMisi() {
   return (
-    <section className={styles.section} aria-label="Visi, Misi, dan Nilai Birojasa Sahabat">
+    <section className={styles.section} aria-label="Visi, Misi, dan Nilai Biro Jasa Sahabat">
       <div className={styles.inner}>
         <header className={styles.header}>
           <div className={styles.kicker}>
@@ -61,7 +61,7 @@ export default function VisiMisi() {
           <h2 className={styles.title}>Kami ingin pengurusan surat kendaraan terasa lebih mudah</h2>
 
           <p className={styles.subtitle}>
-            Birojasa Sahabat dibangun untuk membantu orang sibuk mengurus STNK dan berkas kendaraan dengan
+            Biro Jasa Sahabat dibangun untuk membantu orang sibuk mengurus STNK dan berkas kendaraan dengan
             cara yang <strong>jelas</strong>, <strong>aman</strong>, dan <strong>transparan</strong>.
           </p>
         </header>

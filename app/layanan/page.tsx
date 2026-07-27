@@ -8,18 +8,21 @@ const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
   "https://birojasa-sahabat.com";
 
-const siteName = "Birojasa Sahabat";
+const siteName = "Biro Jasa Sahabat";
 const ogImage = `${siteUrl}/images/og-birojasa-sahabat.jpg`;
 
-const pageTitle = `Layanan Pengurusan STNK | ${siteName}`;
+const baseTitle = "Layanan Pengurusan STNK";
+// Root layout applies "%s | {siteName}", so metadata.title stays unsuffixed.
+// OpenGraph/Twitter titles aren't templated, so they use the full form.
+const pageTitle = `${baseTitle} | ${siteName}`;
 const pageDescription =
-  "Pilih layanan: perpanjang STNK, balik nama, mutasi masuk, ganti nomor plat, ubah bentuk/warna, STNK hilang/rusak, plat custom, dan lainnya. Cek persyaratan & konsultasi gratis via WhatsApp.";
+  "Layanan pengurusan STNK: perpanjang, balik nama, mutasi masuk, ganti plat, dan lainnya. Cek persyaratan & konsultasi gratis via WhatsApp.";
 
 const canonical = `${siteUrl}/layanan`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: pageTitle,
+  title: baseTitle,
   description: pageDescription,
   keywords: [
     "layanan pengurusan STNK",
@@ -54,7 +57,7 @@ export const metadata: Metadata = {
         url: ogImage,
         width: 1200,
         height: 630,
-        alt: "Birojasa Sahabat — Layanan Pengurusan STNK",
+        alt: "Biro Jasa Sahabat — Layanan Pengurusan STNK",
       },
     ],
   },
