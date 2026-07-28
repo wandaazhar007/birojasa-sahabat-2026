@@ -1,6 +1,7 @@
 // app/components/estimasi/Estimasi.tsx
 import styles from "./Estimasi.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import {
   faClock,
   faTriangleExclamation,
@@ -12,7 +13,7 @@ import {
 type EstimasiPoint = {
   title: string;
   description: string;
-  icon?: any;
+  icon?: IconDefinition;
 };
 
 type EstimasiProps = {

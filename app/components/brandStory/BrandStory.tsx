@@ -3,6 +3,7 @@ import Link from "next/link";
 import styles from "./BrandStory.module.scss";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import {
   faFileCircleQuestion,
   faPeopleArrows,
@@ -18,7 +19,7 @@ const waHref = `https://wa.me/6281318927898?text=${encodeURIComponent(waMessage)
 type PainPoint = {
   title: string;
   desc: string;
-  icon: any;
+  icon: IconDefinition;
 };
 
 const painPoints: PainPoint[] = [

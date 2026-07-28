@@ -3,6 +3,7 @@ import Link from "next/link";
 import styles from "./CaraKerja.module.scss";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import {
   faComments,
   faClipboardCheck,
@@ -16,7 +17,7 @@ import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 type Step = {
   title: string;
   desc: string;
-  icon: any;
+  icon: IconDefinition;
 };
 
 const waMessage = "Assalamualaikum admin Biro Jasa Sahabat, saya mau konsultasi.";

@@ -3,6 +3,7 @@ import Link from "next/link";
 import styles from "./Steps.module.scss";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import {
   faFileCircleCheck,
   faTruckFast,
@@ -14,7 +15,7 @@ import { faWhatsapp as faWhatsappBrand, faWhatsapp } from "@fortawesome/free-bra
 type StepItem = {
   title: string;
   desc: string;
-  icon: any;
+  icon: IconDefinition;
 };
 
 const steps: StepItem[] = [

@@ -6,6 +6,7 @@ import Link from "next/link";
 import styles from "./FaqMini.module.scss";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import {
   faCircleQuestion,
   faShieldHalved,
@@ -23,7 +24,7 @@ export type FaqItem = {
 };
 
 export type FaqPoint = {
-  icon: any;
+  icon: IconDefinition;
   text: string;
 };
 

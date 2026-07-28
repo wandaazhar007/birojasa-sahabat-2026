@@ -3,6 +3,7 @@ import Link from "next/link";
 import styles from "./WhyUs.module.scss";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import {
   faBolt,
   faUserShield,
@@ -15,7 +16,7 @@ import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 type Reason = {
   title: string;
   desc: string;
-  icon: any;
+  icon: IconDefinition;
 };
 
 const reasons: Reason[] = [

@@ -2,6 +2,7 @@
 import styles from "./VisiMisi.module.scss";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import {
   faBullseye,
   faFlagCheckered,
@@ -15,7 +16,7 @@ import {
 type Pillar = {
   title: string;
   desc: string;
-  icon: any;
+  icon: IconDefinition;
 };
 
 const values: Pillar[] = [

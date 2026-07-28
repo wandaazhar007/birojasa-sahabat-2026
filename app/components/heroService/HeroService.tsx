@@ -3,6 +3,7 @@ import Link from "next/link";
 import styles from "./HeroService.module.scss";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import {
   faArrowRight,
   faShieldHalved,
@@ -14,7 +15,7 @@ import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 type Highlight = {
   title: string;
   description: string;
-  icon?: any;
+  icon?: IconDefinition;
 };
 
 type BreadcrumbItem = {

@@ -1,6 +1,7 @@
 // app/components/benefitsSummary/BenefitsSummary.tsx
 import styles from "./BenefitsSummary.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import {
   faCircleCheck,
   faClipboardList,
@@ -12,7 +13,7 @@ import {
 type BenefitItem = {
   title: string;
   description: string;
-  icon?: any;
+  icon?: IconDefinition;
 };
 
 type BenefitsSummaryProps = {

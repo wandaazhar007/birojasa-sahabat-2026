@@ -1,7 +1,9 @@
+import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
+
 export type Highlight = {
   title: string;
   description: string;
-  icon?: any;
+  icon?: IconDefinition;
 };
 
 export type BreadcrumbItem = {
@@ -12,25 +14,25 @@ export type BreadcrumbItem = {
 export type BenefitItem = {
   title: string;
   description: string;
-  icon?: any;
+  icon?: IconDefinition;
 };
 
 export type RequirementItem = {
   label: string;
   note?: string;
-  icon?: any;
+  icon?: IconDefinition;
 };
 
 export type StepItem = {
   title: string;
   description: string;
-  icon?: any;
+  icon?: IconDefinition;
 };
 
 export type EstimasiPoint = {
   title: string;
   description: string;
-  icon?: any;
+  icon?: IconDefinition;
 };
 
 export type FaqItem = {

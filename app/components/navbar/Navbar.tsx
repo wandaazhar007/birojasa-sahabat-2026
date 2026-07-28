@@ -28,6 +28,16 @@ export default function Navbar() {
 
   const dropdownRef = useRef<HTMLLIElement | null>(null);
 
+  // Close menus on navigation. Adjusted during render (not in an effect) to
+  // avoid the extra render pass a useEffect + setState would cause.
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (pathname !== prevPathname) {
+    setPrevPathname(pathname);
+    setMobileOpen(false);
+    setMobileLayananOpen(false);
+    setDesktopLayananOpen(false);
+  }
+
   const layananItems: NavItem[] = useMemo(
     () => [
       { label: "Perpanjang STNK Tahunan", href: "/layanan/perpanjang-stnk-tahunan" },
@@ -44,12 +54,6 @@ export default function Navbar() {
 
   const whatsappMessage = "Assalamualaikum admin, saya mau tanya perihal surat-surat kendaraan";
   const whatsappHref = `https://wa.me/6281318927898?text=${encodeURIComponent(whatsappMessage)}`;
-
-  useEffect(() => {
-    setMobileOpen(false);
-    setMobileLayananOpen(false);
-    setDesktopLayananOpen(false);
-  }, [pathname]);
 
   useEffect(() => {
     function onDocClick(e: MouseEvent) {

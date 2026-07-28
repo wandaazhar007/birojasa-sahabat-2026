@@ -1,6 +1,7 @@
 // app/components/persyaratanDokumen/PersyaratanDokumen.tsx
 import styles from "./PersyaratanDokumen.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import {
   faFileLines,
   faIdCard,
@@ -11,7 +12,7 @@ import {
 type RequirementItem = {
   label: string;
   note?: string;
-  icon?: any;
+  icon?: IconDefinition;
 };
 
 type PersyaratanDokumenProps = {

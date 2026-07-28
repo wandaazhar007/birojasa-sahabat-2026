@@ -1,6 +1,7 @@
 // app/components/alurProses/AlurProses.tsx
 import styles from "./AlurProses.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import {
   faComments,
   faFileCircleCheck,
@@ -12,7 +13,7 @@ import {
 type StepItem = {
   title: string;
   description: string;
-  icon?: any;
+  icon?: IconDefinition;
 };
 
 type AlurProsesProps = {

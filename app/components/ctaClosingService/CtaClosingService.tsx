@@ -2,6 +2,7 @@
 import styles from "./CtaClosingService.module.scss";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import {
   faBolt,
   faShieldHalved,
@@ -16,7 +17,7 @@ type CtaClosingServiceProps = {
   waMessage?: string;
   secondaryHref?: string;
   secondaryLabel?: string;
-  bullets?: { icon: any; text: string }[];
+  bullets?: { icon: IconDefinition; text: string }[];
 };
 
 export default function CtaClosingService({

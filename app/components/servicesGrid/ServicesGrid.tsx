@@ -2,6 +2,7 @@
 import Link from "next/link";
 import styles from "./ServicesGrid.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import {
   faIdCard,
   faCarSide,
@@ -17,7 +18,7 @@ import {
 type ServiceItem = {
   title: string;
   href: string;
-  icon: any;
+  icon: IconDefinition;
   desc: string;
 };
 
